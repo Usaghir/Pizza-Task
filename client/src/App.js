@@ -7,6 +7,8 @@ import CartContextProvider from './global/CartContext.js';
 import Products from './components/Products.js';
 import Cart from './components/Cart.js';
 import NotFound from './components/NotFound.js';
+import SubmitForm from './components/SubmitForm.js';
+import Footer from './components/Footer.js';
 
 function App() {
   return (
@@ -18,8 +20,10 @@ function App() {
             <Switch>
               <Route path="/" exact component={Products} />
               <Route path="/cart" exact component={Cart} />
+              <Route path="/order" exact component={SubmitForm} />
               <Route component={NotFound} />
             </Switch>
+            <Footer />
           </Router>
         </CartContextProvider>
       </ProductContextProvider>

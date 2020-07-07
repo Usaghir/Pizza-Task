@@ -1,24 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../global/CartContext';
+import Logo from './Logo.png';
 
-const Navbar = () => {
+const Navbar = ({ cartToggle }) => {
+  const { shoppingCart } = useContext(CartContext);
   return (
-    <nav className="navbar navbar-expand-lg ">
+    <nav className="navbar navbar-expand-lg  bg-dark ">
       <ul className="container">
         <li>
           <Link to="/" className=" ">
-            Top Pizza
+            <img className="navbar-brand mt-3" src={Logo} alt="#" style={{ width: 150 }} />
           </Link>
         </li>
       </ul>
-      <ul className="right">
-        <li className="mr-4">
+      <div className="right ">
+        <button className="btn btn-primary" onClick={cartToggle}>
           <Link to="/cart">
-            <i className="fas fa-cart-plus">cart</i>
-            <span>0</span>
+            <i className="fas fa-cart-plus">
+              <span className="badge badge-light badge-sm mt-2">
+                {shoppingCart ? shoppingCart.length : 0}
+              </span>
+            </i>
           </Link>
-        </li>
-      </ul>
+        </button>
+      </div>
     </nav>
   );
 };
