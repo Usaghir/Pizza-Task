@@ -5,7 +5,7 @@ class Footer extends Component {
   render() {
     let year = new Date().getFullYear();
     return (
-      <Navbar fixed="bottom" bg="dark" variant="dark">
+      <Navbar fixed="" bg="dark" variant="dark">
         <Container>
           <Col lg={12} className="text-center text-muted">
             <div> {year}, All right reserved by ToPizza </div>

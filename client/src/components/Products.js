@@ -8,8 +8,8 @@ const Products = () => {
   const { dispatch } = useContext(CartContext);
 
   return (
-    <div className="container d-flex mt-5 justify-content-center">
-      <div className="row">
+    <div className="container d-flex mt-5 pt-5 justify-content-center">
+      <div className="row mt-5">
         {products.map((product) => (
           <div key={product.id} className="mr-5 ">
             <div>
@@ -21,8 +21,8 @@ const Products = () => {
                 height="170"
               />
             </div>
-            <div width="170">
-              <h6 className="font-weight-bold">{product.name}</h6>
+            <div>
+              <h6 className="font-weight-bold ">{product.name}</h6>
               <div className=" mt-2">€{product.price}.00</div>
               <div className=" mt-2" style={{ width: 170 }}>
                 {product.description}
