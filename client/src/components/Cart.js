@@ -47,7 +47,7 @@ const Cart = () => {
             <ul className="list-group-flush mt-5 ">
               <li className="list-group-item">
                 <h5 className="mt-5 pt-5">
-                  Shoping cart is empty now kindly choose the pizzas again.
+                  Shopping cart is empty now kindly choose the pizzas again.
                 </h5>
               </li>
             </ul>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NavbarTop from './components/NavbarTop.js';
-//import Home from './components/Home.js';
+import MyOrder from './components/MyOrder.js';
 import ProductContextProvider from './global/ProductContext.js';
 import CartContextProvider from './global/CartContext.js';
 import Products from './components/Products.js';
@@ -21,6 +21,7 @@ function App() {
               <Route path="/" exact component={Products} />
               <Route path="/cart" exact component={Cart} />
               <Route path="/order" exact component={SubmitForm} />
+              <Route path="/MyOrder" exact component={MyOrder} />
               <Route component={NotFound} />
             </Switch>
             <Footer />
