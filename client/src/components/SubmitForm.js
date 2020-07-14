@@ -29,7 +29,7 @@ const SubmitForm = (Component) => {
     e.preventDefault();
 
     axios
-      .post('http://localhost:5000/order/', {
+      .post('/order/', {
         first_name: state.firstName,
         last_name: state.lastName,
         email: state.email,
@@ -44,7 +44,9 @@ const SubmitForm = (Component) => {
         order_date:
           new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate(),
       })
-      .then((res) => {})
+      .then((res) => {
+        window.location = '/';
+      })
       .catch((err) => {
         alert(err);
       });

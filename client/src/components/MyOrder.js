@@ -23,7 +23,7 @@ class MyOrder extends React.Component {
   };
   async getPizzas() {
     let data = await axios
-      .get(`http://localhost:5000/pizza/${this.state.email_para}`)
+      .get(`/pizza/${this.state.email_para}`)
       .then(function (response) {
         return response;
       })
@@ -35,7 +35,7 @@ class MyOrder extends React.Component {
   }
   async getCustomers() {
     let data = await axios
-      .get(`http://localhost:5000/order/${this.state.email_para}`)
+      .get(`/order/${this.state.email_para}`)
       .then(function (response) {
         return response;
       })
