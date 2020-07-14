@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Component.css';
 
 const Cart = () => {
-  const { dispatch, shoppingCart, totalPrice, qty } = useContext(CartContext);
+  const { dispatch, shoppingCart, totalPrice } = useContext(CartContext);
 
   return (
     <div className="card mt-3 justify-content-between align-items-center ">
@@ -43,14 +43,15 @@ const Cart = () => {
             </li>
           ))
         ) : (
-          <div className=" mt-3 pt-3 pb-3 mb-3 justify-content-between align-items-center ">
-            <ul className="list-group-flush mt-5 ">
-              <li className="list-group-item">
-                <h5 className="mt-5 pt-5">
-                  Shopping cart is empty now kindly choose the pizzas again.
-                </h5>
-              </li>
-            </ul>
+          <div className="card mb-4 pt-3 mt-5 center">
+            <div className="card-body">
+              <h5 className="card-title bold-text">Thanks for choosing TopPizza </h5>
+              <p className="card-text">
+                The shopping cart is empty please go to main page by clicking the logo on the top
+                left to select the pizzas again.
+              </p>
+              <p className="card-text"></p>
+            </div>
           </div>
         )}
       </ul>
@@ -59,26 +60,37 @@ const Cart = () => {
           <h5 className="">Cart Summary</h5>
           <ul className="list-group list-group-flush">
             <li className="list-group-item">
-              <h6 className="card-title mr-5 product-name">VAT</h6>
-              <h6 className="card-title product-name ">€{(totalPrice * 0.25).toFixed(2)}</h6>
+              <h6 className="card-title mr-5 product-name">Delivery (10%)</h6>
+              <h6 className="card-title product-name ">€{((10 / 100) * totalPrice).toFixed(2)}</h6>
             </li>
             <li className="list-group-item">
-              <h6 className="card-title mr-5 product-name ">Delivery Charges</h6>
-              <h6 className="card-title product-name">€{2.0}</h6>
+              <h6 className="card-title mr-5 product-name ">VAT (25%)</h6>
+              <h6 className="card-title product-name">
+                €{(((10 / 100) * totalPrice * 1 + totalPrice * 1) * 1 * (25 / 100)).toFixed(2)}
+              </h6>
             </li>
 
             <li className="list-group-item">
               <h6 className="card-title mr-3 product-name">Total Price</h6>
-              <h6 className="card-title badge badge-pill product-name badge-success mr-3">
-                €{totalPrice + 2}.00
+              <h6 className="card-title badge badge-pill product-name badge-info mr-3">
+                €
+                {1 *
+                  (
+                    ((10 / 100) * totalPrice * 1 + totalPrice * 1) * 1 * (25 / 100) +
+                    totalPrice * 1
+                  ).toFixed(2)}
               </h6>
-              <h6 className="card-title badge badge-pill badge-success mr-3 product-name">
-                ${(totalPrice * 1.13).toFixed(2) + 2.0}
+              <h6 className="card-title badge badge-pill badge-info mr-3 product-name">
+                $
+                {(
+                  1.13 *
+                  (((10 / 100) * totalPrice * 1 + totalPrice * 1) * 1 * (25 / 100) + totalPrice * 1)
+                ).toFixed(2)}
               </h6>
             </li>
 
             <li className="list-group-item">
-              <div className="">
+              <div className="center">
                 <Link to="/order">
                   <button className="btn  btn-primary mt-3 mb-3">Click to Order</button>
                 </Link>

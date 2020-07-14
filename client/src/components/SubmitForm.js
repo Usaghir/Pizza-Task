@@ -2,10 +2,10 @@ import React, { useContext, useState } from 'react';
 import { CartContext } from '../global/CartContext';
 
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 
 const SubmitForm = (Component) => {
-  const { dispatch, shoppingCart, totalPrice, qty } = useContext(CartContext);
+  const { shoppingCart, totalPrice, qty } = useContext(CartContext);
+
   const [state, setState] = useState({
     firstName: '',
     lastName: '',
@@ -17,7 +17,8 @@ const SubmitForm = (Component) => {
     other: '',
     shoppingCartInfo: shoppingCart,
     total: totalPrice,
-    quantity: qty,
+    totalQty: qty,
+    date: new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate(),
   });
 
   const changeHandler = (e) => {
@@ -26,7 +27,7 @@ const SubmitForm = (Component) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log('form Submitted');
+
     axios
       .post('http://localhost:5000/order/', {
         first_name: state.firstName,
@@ -38,10 +39,12 @@ const SubmitForm = (Component) => {
         post_code: state.postcode,
         other_info: state.other,
         orders_info: state.shoppingCartInfo,
+        total_price: totalPrice,
+        total_qty: qty,
+        order_date:
+          new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate(),
       })
-      .then((res) => {
-        console.log(res);
-      })
+      .then((res) => {})
       .catch((err) => {
         alert(err);
       });
@@ -49,7 +52,7 @@ const SubmitForm = (Component) => {
 
   return (
     <div className="container mt-5 pt-5">
-      <form className="card mt-5 pr-5 pl-5" onSubmit={submitHandler}>
+      <form className=" needs-validation card mt-5 pr-5 pl-5" onSubmit={submitHandler}>
         <div className="form-row mt-5">
           <div className="form-group col-md-6">
             <label className="row">
@@ -63,6 +66,7 @@ const SubmitForm = (Component) => {
               value={state.name}
               onChange={changeHandler}
               name="firstName"
+              required
             ></input>
           </div>
           <div className="form-group col-md-6">
@@ -77,6 +81,7 @@ const SubmitForm = (Component) => {
               value={state.name}
               onChange={changeHandler}
               name="lastName"
+              required
             ></input>
           </div>
           <div className="form-group col-md-6">
@@ -91,6 +96,7 @@ const SubmitForm = (Component) => {
               value={state.email}
               onChange={changeHandler}
               name="email"
+              required
             ></input>
           </div>
           <div className="form-group col-md-6">
@@ -120,6 +126,7 @@ const SubmitForm = (Component) => {
             value={state.address}
             onChange={changeHandler}
             name="address"
+            required
           ></input>
         </div>
 
@@ -135,6 +142,7 @@ const SubmitForm = (Component) => {
               value={state.city}
               onChange={changeHandler}
               name="city"
+              required
             ></input>
           </div>
 
@@ -149,6 +157,7 @@ const SubmitForm = (Component) => {
               value={state.zip}
               onChange={changeHandler}
               name="postcode"
+              required
             ></input>
           </div>
           <div className="form-group">
@@ -168,7 +177,12 @@ const SubmitForm = (Component) => {
         </div>
 
         <button type="submit" className="btn btn-primary mb-3 ">
-          Complete order and Pay $ {state.total + 2}
+          Complete Detail and Pay to finish the order €
+          {1 *
+            (
+              ((10 / 100) * totalPrice * 1 + totalPrice * 1) * 1 * (25 / 100) +
+              totalPrice * 1
+            ).toFixed(2)}
         </button>
       </form>
     </div>
@@ -176,21 +190,3 @@ const SubmitForm = (Component) => {
 };
 
 export default SubmitForm;
-
-{
-  /* <div className="form-group mt-5">
-        <form className="card mt-5" onSubmit={submitHandler}>
-          <div></div>
-          <div className="form-group">
-            <input type="text" name="userId " value={userId} onChange={changeHandler}></input>
-          </div>
-          <div className="form-group">
-            <input type="text" name="title" value={title} onChange={changeHandler}></input>
-          </div>
-          <div className="form-group">
-            <input type="text" name="body" value={body} onChange={changeHandler}></input>
-          </div>
-          <button type="submit">Submit</button>
-        </form>
-      </div> */
-}
