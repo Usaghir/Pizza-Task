@@ -54,13 +54,16 @@ Install Postgres
 
 Starting the database
 
-\$ `psql -U postgres $ \c topizza`
+`$ psql -U postgres`
+`$ \c topizza`
 
 Starting the backend server
 In application root folder.
 
-`$ npm install $ nodomon index`
+`$ npm install`
+`$ nodomon index`
 
 Starting the frontend development server
 In client folder
-`$ npm install $ npm start`
+`$ npm install`
+`$ npm start`
