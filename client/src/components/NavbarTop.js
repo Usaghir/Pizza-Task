@@ -15,6 +15,16 @@ const NavbarTop = () => {
           </Link>
         </li>
       </ul>
+      <div className="right mr-3">
+        <button className="btn btn-primary">
+          <Link to="/MyOrder">
+            <div>
+              my Order
+              <span className="badge badge-light badge-sm mt-2"></span>
+            </div>
+          </Link>
+        </button>
+      </div>
       <div className="right ">
         {shoppingCart.length ? (
           <button className="btn btn-primary">

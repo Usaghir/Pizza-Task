@@ -32,7 +32,6 @@ export const CartReducer = (state, action) => {
     product.qty = product.qty + 1;
     updatedQty = qty + 1;
     updatedPrice = totalPrice + product.price;
-    console.log(product, totalPrice);
     shoppingCart[index] = product;
     return {
       shoppingCart: [...shoppingCart],

@@ -13,45 +13,100 @@ app.use(express.json()); //req.body
 
 app.post('/order', async (req, res) => {
   try {
-    const { description } = req.body;
-    const newOrd = await pool.query(
-      'INSERT INTO pizzaorder (description) VALUES ($1) RETURNING *',
-      [description],
+    const {
+      first_name,
+      last_name,
+      email,
+      phone,
+      address,
+      city,
+      post_code,
+      other_info,
+      orders_info,
+      total_price,
+      total_qty,
+      order_date,
+    } = req.body;
+
+    const customers = await pool.query(
+      'INSERT INTO orders (first_name, last_name, email, phone, address, city, post_code, other_info,total_price,total_qty,order_date) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11) RETURNING *',
+      [
+        first_name,
+        last_name,
+        email,
+        phone,
+        address,
+        city,
+        post_code,
+        other_info,
+        total_price,
+        total_qty,
+        order_date,
+      ],
     );
-    res.json(newOrd);
+
+    const orders = await orders_info.map((order) => {
+      return pool.query(
+        'INSERT INTO pizza (pizza_name,pizza_price, pizza_image, pizza_description,pizza_quantity, order_id) VALUES ($1,$2,$3,$4,$5, $6) RETURNING *',
+        [
+          order.name,
+          order.price,
+          order.image,
+          order.description,
+          order.qty,
+          customers.rows[0].order_id,
+        ],
+      );
+    });
+    res.status(200).json({ status: 'success', data: { cus: customers, ord: orders } });
   } catch (err) {
     console.error(err.message);
   }
 });
 
-// get all orders.
+// get all orders for admin in future use.
 app.get('/order', async (req, res) => {
   try {
-    const allOrd = await pool.query('SELECT * FROM pizzaorder');
+    const allOrd = await pool.query(
+      'select * from orders join pizza on orders.order_id = pizza.order_id ',
+    );
     res.json(allOrd.rows);
   } catch (err) {
     console.error(err.message);
   }
 });
 
-// get an order
+// get customers
 app.get('/order/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const ord = await pool.query('SELECT * FROM pizzaorder WHERE pizzaorder_id = $1', [id]);
-    res.json(ord.rows[0]);
+    const ord = await pool.query('SELECT * FROM orders where orders.email = $1', [id]);
+    res.json(ord.rows);
   } catch (err) {
     console.error(err.message);
   }
 });
 
-// update an order
+// get pizzas
+app.get('/pizza/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const ord = await pool.query(
+      'SELECT * FROM orders join pizza on orders.email = $1 and orders.order_id = pizza.order_id',
+      [id],
+    );
+    res.json(ord.rows);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+// update an order fof future use.
 app.put('/order/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const { description } = req.body;
     const updateOrd = await pool.query(
-      'UPDATE pizzaorder SET description  = $1 WHERE pizzaorder_id = $2',
+      'UPDATE customer SET description  = $1 WHERE customer_id = $2',
       [description, id],
     );
     res.json('order was updated');
@@ -60,11 +115,11 @@ app.put('/order/:id', async (req, res) => {
   }
 });
 
-// Delete an order
+// Delete an order for future use.
 app.delete('/order/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const deleteOrd = await pool.query('DELETE FROM pizzaorder WHERE pizzaorder_id  = $1', [id]);
+    const deleteOrd = await pool.query('DELETE FROM customer WHERE customer_id  = $1', [id]);
     res.json('order was deleted');
   } catch (err) {
     console.error(err.message);

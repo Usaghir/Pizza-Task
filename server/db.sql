@@ -1,11 +1,30 @@
 CREATE DATABASE pizzatask;
 
-CREATE TABLE pizzaorder
+CREATE TABLE orders
 (
-  pizzaorder_id SERIAL PRIMARY KEY,
-  description VARCHAR(20)
+  order_id SERIAL PRIMARY KEY,
+  first_name VARCHAR(20),
+  last_name VARCHAR(20),
+  email VARCHAR(50),
+  phone VARCHAR(20),
+  address VARCHAR(50),
+  city VARCHAR(20),
+  post_code VARCHAR(20),
+  other_info VARCHAR(50),
+  total_price NUMERIC (10, 2),
+  total_qty INTEGER(50),
+  order_date VARCHAR(50),
 );
 
-ALTER TABLE pizzaorder
-ADD COLUMN user_con VARCHAR
-(20);
+CREATE TABLE pizza
+(
+  pizza_id SERIAL PRIMARY KEY,
+  pizza_name VARCHAR(20),
+  pizza_price NUMERIC (10, 2),
+  pizza_image VARCHAR(255),
+  pizza_description VARCHAR(255),
+  pizza_quantity INTEGER,
+  order_id
+    INTEGER REFERENCES orders
+  (order_id)
+);

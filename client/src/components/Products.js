@@ -16,7 +16,7 @@ const Products = () => {
               <img
                 src={product.image}
                 alt="not found"
-                className="mt-3 rounded"
+                className="mt-4 rounded"
                 width="170"
                 height="170"
               />
@@ -29,7 +29,7 @@ const Products = () => {
               </div>
             </div>
             <button
-              className="btn mt-2"
+              className="btn btn-success mt-2"
               onClick={() => dispatch({ type: 'ADD_TO_CART', id: product.id, product })}
             >
               ADD TO CART
