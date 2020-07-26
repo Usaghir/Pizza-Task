@@ -2,3 +2,13 @@
   display: inline-block;
   width: 150px;
 }
+
+main-right {}
+
+main-left {
+  background-color: pink;
+}
+
+.g-font {
+  font-family: 'Roboto Mono', monospace;
+}

@@ -130,7 +130,7 @@ class MyOrder extends React.Component {
                                         <td className="right">€{pizza.pizza_price}</td>
                                         <td className="center">{pizza.pizza_quantity}</td>
                                         <td className="right">
-                                          €{pizza.pizza_price * pizza.pizza_quantity}
+                                          €{(pizza.pizza_price * pizza.pizza_quantity).toFixed(2)}
                                         </td>
                                       </tr>
                                     </tbody>
@@ -148,26 +148,19 @@ class MyOrder extends React.Component {
                                   <td className="left">
                                     <strong className="text-dark">Total</strong>
                                   </td>
-                                  <td className="right">€{totalPrice}</td>
+                                  <td className="right">€{(1 * totalPrice).toFixed(2)}</td>
                                 </tr>
                                 <tr>
                                   <td className="left">
                                     <strong className="text-dark">Delivery (10%)</strong>
                                   </td>
-                                  <td className="right">€{((10 / 100) * totalPrice).toFixed(2)}</td>
+                                  <td className="right">€{(0.1 * totalPrice).toFixed(2)}</td>
                                 </tr>
                                 <tr>
                                   <td className="left">
                                     <strong className="text-dark">VAT (25%)</strong>
                                   </td>
-                                  <td className="right">
-                                    €
-                                    {(
-                                      ((10 / 100) * totalPrice * 1 + totalPrice * 1) *
-                                      1 *
-                                      (25 / 100)
-                                    ).toFixed(2)}
-                                  </td>
+                                  <td className="right">€{(0.275 * totalPrice).toFixed(2)}</td>
                                 </tr>
                                 <tr>
                                   <td className="left">
@@ -175,26 +168,12 @@ class MyOrder extends React.Component {
                                   </td>
                                   <td className="right">
                                     <strong className="text-dark">
-                                      €
-                                      {1 *
-                                        (
-                                          ((10 / 100) * totalPrice * 1 + totalPrice * 1) *
-                                            1 *
-                                            (25 / 100) +
-                                          totalPrice * 1
-                                        ).toFixed(2)}
+                                      €{(1.375 * totalPrice).toFixed(2)}
                                     </strong>
                                   </td>
                                   <td className="right">
                                     <strong className="text-dark">
-                                      $
-                                      {(
-                                        1.13 *
-                                        (((10 / 100) * totalPrice * 1 + totalPrice * 1) *
-                                          1 *
-                                          (25 / 100) +
-                                          totalPrice * 1)
-                                      ).toFixed(2)}
+                                      ${(1.16 * 1.375 * totalPrice).toFixed(2)}
                                     </strong>
                                   </td>
                                 </tr>

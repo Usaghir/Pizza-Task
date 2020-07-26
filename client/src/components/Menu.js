@@ -1,24 +1,25 @@
 import React, { useContext } from 'react';
 import { ProductContext } from '../global/ProductContext';
 import { CartContext } from '../global/CartContext';
+import './Component.css';
 
-const Products = () => {
+const Menu = () => {
   const { products } = useContext(ProductContext);
 
   const { dispatch } = useContext(CartContext);
 
   return (
-    <div className="container d-flex mt-5 pt-5 justify-content-center">
-      <div className="row mt-5">
+    <div className="container d-flex mt-5 pt-5 justify-content-center g-font">
+      <div className="row mt-5 w-100 border">
         {products.map((product) => (
-          <div key={product.id} className="mr-5 ">
+          <div key={product.id} className="m-auto ">
             <div>
               <img
                 src={product.image}
                 alt="not found"
-                className="mt-4 rounded"
-                width="170"
-                height="170"
+                className=" mt-4 rounded border"
+                width="190"
+                height="190"
               />
             </div>
             <div>
@@ -29,7 +30,7 @@ const Products = () => {
               </div>
             </div>
             <button
-              className="btn btn-success mt-2"
+              className="btn btn-success mt-2 mb-4 w-100"
               onClick={() => dispatch({ type: 'ADD_TO_CART', id: product.id, product })}
             >
               ADD TO CART
@@ -41,4 +42,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default Menu;

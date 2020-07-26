@@ -21,7 +21,7 @@ const Cart = () => {
                 />
               </span>
               <span className="mr-3 product-name">{product.name}</span>
-              <span className="mr-3">${product.price}.00</span>
+              <span className="mr-3">${(1 * product.price).toFixed(2)}</span>
 
               <button
                 className="mr-3 btn-sm"
@@ -61,31 +61,20 @@ const Cart = () => {
           <ul className="list-group list-group-flush">
             <li className="list-group-item">
               <h6 className="card-title mr-5 product-name">Delivery (10%)</h6>
-              <h6 className="card-title product-name ">€{((10 / 100) * totalPrice).toFixed(2)}</h6>
+              <h6 className="card-title product-name ">€{(0.1 * totalPrice).toFixed(2)}</h6>
             </li>
             <li className="list-group-item">
               <h6 className="card-title mr-5 product-name ">VAT (25%)</h6>
-              <h6 className="card-title product-name">
-                €{(((10 / 100) * totalPrice * 1 + totalPrice * 1) * 1 * (25 / 100)).toFixed(2)}
-              </h6>
+              <h6 className="card-title product-name">€{(0.275 * totalPrice).toFixed(2)}</h6>
             </li>
 
             <li className="list-group-item">
               <h6 className="card-title mr-3 product-name">Total Price</h6>
               <h6 className="card-title badge badge-pill product-name badge-info mr-3">
-                €
-                {1 *
-                  (
-                    ((10 / 100) * totalPrice * 1 + totalPrice * 1) * 1 * (25 / 100) +
-                    totalPrice * 1
-                  ).toFixed(2)}
+                € ${(1.375 * totalPrice).toFixed(2)}
               </h6>
               <h6 className="card-title badge badge-pill badge-info mr-3 product-name">
-                $
-                {(
-                  1.13 *
-                  (((10 / 100) * totalPrice * 1 + totalPrice * 1) * 1 * (25 / 100) + totalPrice * 1)
-                ).toFixed(2)}
+                ${(1.16 * 1.375 * totalPrice).toFixed(2)}
               </h6>
             </li>
 

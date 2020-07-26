@@ -179,12 +179,8 @@ const SubmitForm = (Component) => {
         </div>
 
         <button type="submit" className="btn btn-primary mb-3 ">
-          Complete Detail and Pay to finish the order €
-          {1 *
-            (
-              ((10 / 100) * totalPrice * 1 + totalPrice * 1) * 1 * (25 / 100) +
-              totalPrice * 1
-            ).toFixed(2)}
+          Confirm and pay €
+          {1.375 * totalPrice.toFixed(2)}
         </button>
       </form>
     </div>

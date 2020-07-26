@@ -65,7 +65,7 @@ const ProductContextProvider = (props) => {
       name: 'Pepperoni Pizza',
       price: 20,
       image: Pepperoni,
-      description: 'Mozzarella, pepperoni, olives, cocktail tomatoes and bell pepper .',
+      description: 'Mozzarella, pepperoni, olives, cocktail tomatoes and pepper.',
     },
   ]);
 
