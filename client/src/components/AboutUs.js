@@ -1,7 +1,37 @@
 import React from 'react';
 
 function AboutUs() {
-  return <div>About US</div>;
+  return (
+    <div className="container pt-5 mt-5 d-flex justify-content-center g-font">
+      <div class="card w-100">
+        <div class="card-body main-left m-5">
+          <h3 class="">About Us</h3>
+          <h5 class="main-left mt-5 mb-2 card-header">Who we are</h5>
+
+          <p class="card-text">
+            Topizza is a pizza shop and online pizza delivery shop and with many chain with in many
+            cities. We just use organic ingredients to with app for all our pizzas and we were
+            awarded one of the best pizza chain in whole community our all organic ingredients come
+            directly from our approved suppliers who just sell the organic products.
+          </p>
+          <h5 class="main-left mt-5 mb-2 card-header">Where we are</h5>
+
+          <p class="card-text">
+            We have 10 pizza stores through out the town and all the are situated in the main
+            squares and train stations. All our branches are situated such a way that we we can
+            serve whole town and it talks just 30 minutes reaching at any house in the town.
+          </p>
+          <h5 class="main-left mt-5 mb-2 card-header">History</h5>
+
+          <p class="card-text">
+            Topizza was started by RUS and SS in 2015 as a small pizza shop and delivery shop but
+            with in five years we have 10 shops in the town and planning to start 3 new shops at the
+            end of this year to serve healthy and organic food to the locals.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default AboutUs;
