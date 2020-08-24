@@ -4,7 +4,7 @@ import { CartContext } from '../global/CartContext';
 import Logo from './Logo.png';
 import './Component.css';
 
-const NavbarTop = () => {
+const Navbar = () => {
   const { shoppingCart } = useContext(CartContext);
   return (
     <nav class="navbar  fixed-top navbar-expand-lg navbar-pink bg-pink">
@@ -12,7 +12,7 @@ const NavbarTop = () => {
         <li>
           <Link to="/" className=" ">
             <img
-              className="navbar-brand mt-3 circle border-primary"
+              className="navbar-brand mt-3   abc border-primary"
               src={Logo}
               alt="#"
               style={{ width: 150 }}
@@ -81,4 +81,4 @@ const NavbarTop = () => {
   );
 };
 
-export default NavbarTop;
+export default Navbar;

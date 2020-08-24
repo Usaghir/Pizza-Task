@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import NavbarTop from './components/NavbarTop.js';
+import Navbar from './components/Navbar.js';
 import MyOrder from './components/MyOrder.js';
 import ProductContextProvider from './global/ProductContext.js';
 import CartContextProvider from './global/CartContext.js';
@@ -19,8 +19,7 @@ function App() {
       <ProductContextProvider>
         <CartContextProvider>
           <Router>
-            <NavbarTop />
-
+            <Navbar />
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/menu" exact component={Menu} />

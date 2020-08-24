@@ -30,8 +30,10 @@ const Menu = () => {
               </div>
             </div>
             <button
-              className="btn btn-success mt-2 mb-4 w-100"
-              onClick={() => dispatch({ type: 'ADD_TO_CART', id: product.id, product })}
+              className="btn btn-col mt-2 mb-4 w-100"
+              onClick={() => {
+                dispatch({ type: 'ADD_TO_CART', id: product.id, product });
+              }}
             >
               ADD TO CART
             </button>
