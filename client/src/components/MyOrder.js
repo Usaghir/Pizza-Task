@@ -65,7 +65,7 @@ class MyOrder extends React.Component {
                 required
               ></input>
             </div>
-            <button type="submit" className="btn btn-default">
+            <button type="submit" className="btn " style={{ background: '#C75A1F' }}>
               Submit
             </button>
           </form>

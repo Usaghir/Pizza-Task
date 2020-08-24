@@ -34,7 +34,7 @@ function Contact() {
   };
 
   return (
-    <div className="container mt-5 pt-5">
+    <div className="container mt-5 pt-5 mb-5">
       <form className=" needs-validation card mt-5 pr-5 pl-5" onSubmit={submitHandler}>
         <div className="form-row mt-5">
           <div className="form-group col-md-6">
@@ -111,7 +111,7 @@ function Contact() {
             ></textarea>
           </div>
         </div>
-        <button type="submit" className="btn btn-primary mb-3 ">
+        <button type="submit" className="btn  mb-3 w-25" style={{ background: '#C75A1F' }}>
           Submit
         </button>
       </form>

@@ -20,7 +20,7 @@ const Cart = () => {
                   alt="not found"
                 />
               </span>
-              <span className="mr-3 product-name">{product.name}</span>
+              <span className="mr-3 product-name font-bebas">{product.name}</span>
               <span className="mr-3">${(1 * product.price).toFixed(2)}</span>
 
               <button
@@ -60,20 +60,26 @@ const Cart = () => {
           <h5 className="">Cart Summary</h5>
           <ul className="list-group list-group-flush">
             <li className="list-group-item">
-              <h6 className="card-title mr-5 product-name">Delivery (10%)</h6>
+              <h6 className="card-title mr-5 product-name font-bebas">Delivery (10%)</h6>
               <h6 className="card-title product-name ">€{(0.1 * totalPrice).toFixed(2)}</h6>
             </li>
             <li className="list-group-item">
-              <h6 className="card-title mr-5 product-name ">VAT (25%)</h6>
+              <h6 className="card-title mr-5 product-name font-bebas">VAT (25%)</h6>
               <h6 className="card-title product-name">€{(0.275 * totalPrice).toFixed(2)}</h6>
             </li>
 
             <li className="list-group-item">
-              <h6 className="card-title mr-3 product-name">Total Price</h6>
-              <h6 className="card-title badge badge-pill product-name badge-info mr-3">
+              <h6 className="card-title mr-3 product-name font-bebas">Total Price</h6>
+              <h6
+                className="card-title badge badge-pill product-name badge-info mr-3"
+                style={{ background: '#E6B976' }}
+              >
                 € ${(1.375 * totalPrice).toFixed(2)}
               </h6>
-              <h6 className="card-title badge badge-pill badge-info mr-3 product-name">
+              <h6
+                className="card-title badge badge-pill badge-info mr-3 product-name"
+                style={{ background: '#E6B976' }}
+              >
                 ${(1.16 * 1.375 * totalPrice).toFixed(2)}
               </h6>
             </li>
@@ -81,7 +87,9 @@ const Cart = () => {
             <li className="list-group-item">
               <div className="center">
                 <Link to="/order">
-                  <button className="btn  btn-primary mt-3 mb-3">Click to Order</button>
+                  <button className="btn  btn-primary mt-3 mb-3" style={{ background: '#C75A1F' }}>
+                    Click to Order
+                  </button>
                 </Link>
               </div>
             </li>

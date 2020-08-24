@@ -178,8 +178,12 @@ const SubmitForm = (Component) => {
           </div>
         </div>
 
-        <button type="submit" className="btn btn-primary mb-3 ">
-          Confirm and pay €{1.375 * totalPrice.toFixed(2)}
+        <button
+          type="submit"
+          className="btn w-25 mb-3 font-bebas"
+          style={{ background: '#C75A1F' }}
+        >
+          Confirm and pay
         </button>
       </form>
     </div>

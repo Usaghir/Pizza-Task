@@ -9,7 +9,7 @@ const Menu = () => {
   const { dispatch } = useContext(CartContext);
 
   return (
-    <div className="container d-flex mt-5 pt-5 justify-content-center g-font">
+    <div className="container d-flex mt-5 pt-5 justify-content-center">
       <div className="row mt-5 w-100 border">
         {products.map((product) => (
           <div key={product.id} className="m-auto ">
@@ -23,14 +23,15 @@ const Menu = () => {
               />
             </div>
             <div>
-              <h6 className="font-weight-bold ">{product.name}</h6>
+              <h6 className="font-weight-bold font-bebas">{product.name}</h6>
               <div className=" mt-2">€{product.price}.00</div>
               <div className=" mt-2" style={{ width: 170 }}>
                 {product.description}
               </div>
             </div>
             <button
-              className="btn btn-col mt-2 mb-4 w-100"
+              className="btn mt-2 mb-4 w-100 font-bebas"
+              style={{ background: '#C75A1F' }}
               onClick={() => {
                 dispatch({ type: 'ADD_TO_CART', id: product.id, product });
               }}

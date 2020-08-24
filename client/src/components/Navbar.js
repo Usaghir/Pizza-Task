@@ -7,12 +7,12 @@ import './Component.css';
 const Navbar = () => {
   const { shoppingCart } = useContext(CartContext);
   return (
-    <nav class="navbar  fixed-top navbar-expand-lg navbar-pink bg-pink">
+    <nav class="navbar  fixed-top navbar-expand-lg navbar-pink " style={{ background: '#E6B976' }}>
       <ul className="container">
         <li>
           <Link to="/" className=" ">
             <img
-              className="navbar-brand mt-3   abc border-primary"
+              className="navbar-brand mt-3 abc border-primary"
               src={Logo}
               alt="#"
               style={{ width: 150 }}
@@ -20,39 +20,39 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <div className="">
+          <div>
             <Link to="/">
-              <div>Home</div>
+              <div className="nav-items">HOME</div>
             </Link>
           </div>
         </li>
         <li>
           <div className="">
             <Link to="/Menu">
-              <div>Menu</div>
+              <div>MENU</div>
             </Link>
           </div>
         </li>
         <li>
           <div className="">
             <Link to="/about">
-              <div>About Us</div>
+              <div>ABOUT</div>
             </Link>
           </div>
         </li>
         <li>
           <div className="">
             <Link to="/contact">
-              <div>Contact</div>
+              <div>CONTACT</div>
             </Link>
           </div>
         </li>
         <li>
           <div className=" mr-3">
-            <button className="btn btn-primary">
+            <button className="btn btn-primary font-bebas" style={{ background: '#C75A1F' }}>
               <Link to="/MyOrder">
-                <div>
-                  my Order
+                <div className=" ">
+                  MY ORDER
                   <span className="badge badge-light badge-sm mt-2"></span>
                 </div>
               </Link>
@@ -62,7 +62,7 @@ const Navbar = () => {
         <li>
           <div className=" ">
             {shoppingCart.length ? (
-              <button className="btn btn-primary">
+              <button className="btn btn-primary font-bebas" style={{ background: '#C75A1F' }}>
                 <Link to="/cart">
                   <i className="fas fa-cart-plus">
                     <span className="badge badge-light badge-sm mt-2">

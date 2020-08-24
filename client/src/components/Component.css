@@ -3,10 +3,11 @@
   width: 150px;
 }
 
-main-left {
-  background-color: pink;
+.font-bebas {
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 1.5px;
 }
 
-.g-font {
-  font-family: 'Roboto Mono', monospace;
+body {
+  font-family: 'Montserrat', sans-serif;
 }
