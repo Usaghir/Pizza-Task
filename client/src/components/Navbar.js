@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../global/CartContext';
-import Logo from './logo.png';
+//import Logo from './logo.png';
 import './Component.css';
 
 const Navbar = () => {
@@ -9,16 +9,6 @@ const Navbar = () => {
   return (
     <nav className="navbar  fixed-top navbar-expand-lg  " style={{ background: '#474853' }}>
       <ul className="container">
-        <li>
-          <Link to="/" className=" ">
-            <img
-              className="navbar-brand mt-3 abc border-primary"
-              src={Logo}
-              alt="#"
-              style={{ width: 150 }}
-            />
-          </Link>
-        </li>
         <li>
           <div>
             <Link className="text-decoration-none" to="/">
