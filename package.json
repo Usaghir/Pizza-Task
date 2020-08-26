@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "pizza task",
   "main": "index.js",
-  "engin": {
+  "engines": {
     "node": "12.18.0",
     "npm": "6.14.4"
   },
@@ -21,6 +21,6 @@
     "express-handlebars": "^5.1.0",
     "nodemailer": "^6.4.11",
     "nodemon": "^2.0.4",
-    "pg": "^8.2.1"
+    "pg": "^8.3.3"
   }
 }
