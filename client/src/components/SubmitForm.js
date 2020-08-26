@@ -19,6 +19,7 @@ const SubmitForm = (Component) => {
     total: totalPrice,
     totalQty: qty,
     date: new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate(),
+    submitMessage: false,
   });
 
   const changeHandler = (e) => {
@@ -50,142 +51,161 @@ const SubmitForm = (Component) => {
       .catch((err) => {
         alert(err);
       });
+    setState({
+      submitMessage: true,
+      firstName: '',
+      lastName: '',
+      email: '',
+      phoneNumber: '',
+      address: '',
+      city: '',
+      postcode: '',
+      other: '',
+      total: 0,
+    });
   };
 
   return (
-    <div className="container mt-5 pt-5">
-      <form className=" needs-validation card mt-5 pr-5 pl-5" onSubmit={submitHandler}>
-        <div className="form-row mt-5">
-          <div className="form-group col-md-6">
-            <label className="row">
-              First Name<div className="text-danger"> *</div>
-            </label>
-            <input
-              type="text"
-              className="form-control input-group-append"
-              id="inputEmail4"
-              placeholder="First Name"
-              value={state.name}
-              onChange={changeHandler}
-              name="firstName"
-              required
-            ></input>
-          </div>
-          <div className="form-group col-md-6">
-            <label className="row">
-              Last Name<div className="text-danger"> *</div>
-            </label>
-            <input
-              type="text"
-              className="form-control input-group-append"
-              id="inputEmail4"
-              placeholder="Last Name"
-              value={state.name}
-              onChange={changeHandler}
-              name="lastName"
-              required
-            ></input>
-          </div>
-          <div className="form-group col-md-6">
-            <label className="row">
-              Email<div className="text-danger"> *</div>
-            </label>
-            <input
-              type="text"
-              className="form-control input-group-append"
-              id="inputEmail4"
-              placeholder="Email"
-              value={state.email}
-              onChange={changeHandler}
-              name="email"
-              required
-            ></input>
-          </div>
-          <div className="form-group col-md-6">
-            <label className="row">
-              Phone Number<small className="text-muted">(optional)</small>
-            </label>
-            <input
-              type="text"
-              className="form-control input-group-append"
-              id="inputPassword4"
-              placeholder="Phone Number"
-              value={state.phoneNumber}
-              onChange={changeHandler}
-              name="phoneNumber"
-            ></input>
-          </div>
-        </div>
-        <div className="form-group">
-          <label className="row">
-            Address<div className="text-danger"> *</div>
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="inputAddress"
-            placeholder="1234 Main St"
-            value={state.address}
-            onChange={changeHandler}
-            name="address"
-            required
-          ></input>
-        </div>
+    <div style={{ backgroundColor: '#F7FFF7' }}>
+      <div className="container w-50 " id="contact">
+        <h1 className="  font-weight-bold pt-5">Enter Detail</h1>
+        <div class="mb-5"></div>
+        <form className="" style={{ background: '#F7FFF7' }} onSubmit={submitHandler}>
+          <div className="form-row " style={{ background: '#F7FFF7' }}>
+            <div className="form-group  col-md-6">
+              <input
+                type="text"
+                className="form-control  border-0 pl-3"
+                style={{ backgroundColor: '#474853', color: '#f7ffff', boxSizing: 'border-box' }}
+                id="inputEmail4"
+                placeholder="First Name"
+                value={state.firstName}
+                onChange={changeHandler}
+                name="firstName"
+                required
+              ></input>
+            </div>
+            <div className="form-group col-md-6">
+              <input
+                type="text"
+                className="form-control  border-0 pl-3"
+                style={{ background: '#474853', color: '#f7ffff', boxSizing: 'border-box' }}
+                id="inputEmail4"
+                placeholder="Last Name"
+                value={state.lastName}
+                onChange={changeHandler}
+                name="lastName"
+                required
+              ></input>
+            </div>
+            <div className="form-group col-md-6">
+              <input
+                type="text"
+                className="form-control  border-0 pl-3 "
+                style={{ background: '#474853', color: '#f7ffff', boxSizing: 'border-box' }}
+                id="inputEmail4"
+                placeholder="Email"
+                value={state.email}
+                onChange={changeHandler}
+                name="email"
+                required
+              ></input>
+            </div>
+            <div className="form-group col-md-6">
+              <input
+                type="text"
+                className="form-control  border-0 pl-3 "
+                style={{ background: '#474853', color: '#f7ffff', boxSizing: 'border-box' }}
+                id="inputEmail4"
+                placeholder="Phone"
+                value={state.phoneNumber}
+                onChange={changeHandler}
+                name="phoneNumber"
+              ></input>
+            </div>
+            <div className="form-group col-md-6">
+              <input
+                type="text"
+                className="form-control  border-0 pl-3 "
+                style={{ background: '#474853', color: '#f7ffff', boxSizing: 'border-box' }}
+                id="inputEmail4"
+                placeholder="City"
+                value={state.city}
+                onChange={changeHandler}
+                name="city"
+                required
+              ></input>
+            </div>
 
-        <div className="form-row">
-          <div className="form-group col-md-6">
-            <label className="row">
-              City<div className="text-danger"> *</div>
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="inputCity"
-              value={state.city}
-              onChange={changeHandler}
-              name="city"
-              required
-            ></input>
-          </div>
+            <div className="form-group col-md-6">
+              <input
+                type="text"
+                className="form-control  border-0 pl-3 "
+                style={{ background: '#474853', color: '#f7ffff', boxSizing: 'border-box' }}
+                id="inputEmail4"
+                placeholder="Post Code"
+                value={state.postcode}
+                onChange={changeHandler}
+                name="postcode"
+                required
+              ></input>
+            </div>
 
-          <div className="form-group col-md-6">
-            <label className="row">
-              Postcode<div className="text-danger"> *</div>
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="post-code"
-              value={state.zip}
-              onChange={changeHandler}
-              name="postcode"
-              required
-            ></input>
+            <div class="form-group col-md-6 ">
+              <input
+                type="text"
+                className="form-control  border-0 pl-3 "
+                style={{ background: '#474853', color: '#f7ffff', boxSizing: 'border-box' }}
+                id="inputEmail4"
+                placeholder="Address"
+                value={state.address}
+                onChange={changeHandler}
+                name="address"
+                required
+              ></input>
+            </div>
+            <div class="form-group col-md-6 ">
+              <input
+                type="text"
+                className="form-control  border-0 pl-3 text-light"
+                style={{ background: '#474853', boxSizing: 'border-box' }}
+                value={(1.375 * totalPrice).toFixed(2) + ' €'}
+                name="price"
+                readonly
+              ></input>
+            </div>
+            <div class="form-group col ">
+              <input
+                type="text"
+                className="form-control  border-0 pl-3 "
+                style={{ background: '#474853', color: '#f7ffff', boxSizing: 'border-box' }}
+                id="inputEmail4"
+                placeholder="Note for the delivery"
+                value={state.other}
+                onChange={changeHandler}
+                name="other"
+              ></input>
+            </div>
           </div>
+          {state.submitMessage ? (
+            <div className="form-group ">
+              <div
+                className="form-control  border-0 pl-3 "
+                style={{ background: '#86b3d1', boxSizing: 'border-box' }}
+              >
+                Thanks for placing the order and soon you will get your order.
+              </div>
+            </div>
+          ) : (
+            ''
+          )}
           <div className="form-group">
-            <label className="row">
-              Any note for delivery<small className="text-muted"> (optional)</small>
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="inputAddress"
-              placeholder="1234 Main St"
-              value={state.other}
-              onChange={changeHandler}
-              name="other"
-            ></input>
+            <button type="submit" className="btn  w-25 mb-2 " style={{ background: '#86b3d1' }}>
+              Submit
+            </button>
           </div>
-        </div>
-
-        <button
-          type="submit"
-          className="btn w-25 mb-3 font-bebas"
-          style={{ background: '#C75A1F' }}
-        >
-          Confirm and pay
-        </button>
-      </form>
+        </form>
+      </div>
     </div>
   );
 };

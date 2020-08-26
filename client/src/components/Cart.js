@@ -20,7 +20,9 @@ const Cart = () => {
                   alt="not found"
                 />
               </span>
-              <span className="mr-3 product-name font-bebas">{product.name}</span>
+              <span className="mr-3 product-name font-bebas" style={{ color: '#af4448' }}>
+                {product.name}
+              </span>
               <span className="mr-3">${(1 * product.price).toFixed(2)}</span>
 
               <button
@@ -57,37 +59,45 @@ const Cart = () => {
       </ul>
       {shoppingCart.length ? (
         <div className=" card ml-5 mt-3 justify-content-between align-items-center">
-          <h5 className="">Cart Summary</h5>
           <ul className="list-group list-group-flush">
-            <li className="list-group-item">
-              <h6 className="card-title mr-5 product-name font-bebas">Delivery (10%)</h6>
+            <li style={{ background: '#474853' }}>
+              <h4 className="font-weight-bold text-light w-100 pl-3">Cart Summary</h4>
+            </li>
+            <li className="list-group-item" style={{ background: '#D2D4D3' }}>
+              <h6 className="card-title mr-5 product-name font-bebas" style={{ color: '#474853' }}>
+                Delivery (10%)
+              </h6>
               <h6 className="card-title product-name ">€{(0.1 * totalPrice).toFixed(2)}</h6>
             </li>
-            <li className="list-group-item">
-              <h6 className="card-title mr-5 product-name font-bebas">VAT (25%)</h6>
+            <li className="list-group-item" style={{ background: '#D2D4D3' }}>
+              <h6 className="card-title mr-5 product-name font-bebas" style={{ color: '#474853' }}>
+                VAT (25%)
+              </h6>
               <h6 className="card-title product-name">€{(0.275 * totalPrice).toFixed(2)}</h6>
             </li>
 
-            <li className="list-group-item">
-              <h6 className="card-title mr-3 product-name font-bebas">Total Price</h6>
+            <li className="list-group-item" style={{ background: '#D2D4D3' }}>
+              <h6 className="card-title mr-3 product-name font-bebas" style={{ color: '#474853' }}>
+                Total Price
+              </h6>
               <h6
                 className="card-title badge badge-pill product-name badge-info mr-3"
-                style={{ background: '#E6B976' }}
+                style={{ background: '#AAA0A0' }}
               >
-                € ${(1.375 * totalPrice).toFixed(2)}
+                € {(1.375 * totalPrice).toFixed(2)}
               </h6>
               <h6
                 className="card-title badge badge-pill badge-info mr-3 product-name"
-                style={{ background: '#E6B976' }}
+                style={{ background: '#AAA0A0' }}
               >
                 ${(1.16 * 1.375 * totalPrice).toFixed(2)}
               </h6>
             </li>
 
-            <li className="list-group-item">
+            <li className="list-group-item" style={{ background: '#D2D4D3' }}>
               <div className="center">
                 <Link to="/order">
-                  <button className="btn  btn-primary mt-3 mb-3" style={{ background: '#C75A1F' }}>
+                  <button className="btn  btn-primary mt-3 mb-3" style={{ background: '#318fb5' }}>
                     Click to Order
                   </button>
                 </Link>

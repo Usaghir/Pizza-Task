@@ -2,11 +2,14 @@ import React from 'react';
 
 function AboutUs() {
   return (
-    <div className="container pt-5 mt-5 d-flex justify-content-center g-font">
-      <div class="card w-100">
-        <div class="card-body m-5">
-          <h3 class="">About</h3>
-          <h5 class=" mt-5 mb-2 card-header font-bebas " style={{ background: '#D0CFC5' }}>
+    <div className="container pt-5 mt-5 mb-5 d-flex justify-content-center g-font">
+      <div class="card w-100 pt-5 mt-5" style={{ background: '#D2D4D3' }}>
+        <h1 className="  font-weight-bold">ABOUT</h1>
+        <div class="card-body m-5 ">
+          <h5
+            class=" mb-2 card-header font-bebas "
+            style={{ background: '#474853', color: '#FAFFFF' }}
+          >
             Who we are
           </h5>
 
@@ -16,7 +19,10 @@ function AboutUs() {
             awarded one of the best pizza chain in whole community our all organic ingredients come
             directly from our approved suppliers who just sell the organic products.
           </p>
-          <h5 class=" mt-5 mb-2 card-header font-bebas" style={{ background: '#D0CFC5' }}>
+          <h5
+            class=" mt-5 mb-2 card-header font-bebas"
+            style={{ background: '#474853', color: '#FAFFFF' }}
+          >
             Where we are
           </h5>
 
@@ -25,7 +31,10 @@ function AboutUs() {
             squares and train stations. All our branches are situated such a way that we we can
             serve whole town and it talks just 30 minutes reaching at any house in the town.
           </p>
-          <h5 class=" mt-5 mb-2 card-header font-bebas" style={{ background: '#D0CFC5' }}>
+          <h5
+            class=" mt-5 mb-2 card-header font-bebas"
+            style={{ background: '#474853', color: '#FAFFFF' }}
+          >
             History
           </h5>
 

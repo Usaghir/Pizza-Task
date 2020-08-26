@@ -48,24 +48,22 @@ class MyOrder extends React.Component {
     const { pizzas, customers } = this.state;
     return (
       <div className="mt-5 pt-5 ">
-        <div className=" center offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 padding">
+        <div className="mt-5 pt-5 center offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 padding">
           <form className=" center" onSubmit={this.submitHandler}>
             <div className="form-group">
-              <label>
-                Please enter the correct email address to see the receipt of your orders:
-              </label>
               <input
                 type="text"
                 className="center form-control"
+                style={{ backgroundColor: '#474853', color: '#F7FFFF', boxSizing: 'border-box' }}
                 id="inputAddress"
-                placeholder=" abcde@fghi.com"
+                placeholder=" Please enter the correct email address to see the receipt of your orders:"
                 value={this.state.email_para}
                 onChange={this.changeHandler}
                 name="other"
                 required
               ></input>
             </div>
-            <button type="submit" className="btn " style={{ background: '#C75A1F' }}>
+            <button type="submit" className="btn " style={{ background: '#318fb5' }}>
               Submit
             </button>
           </form>

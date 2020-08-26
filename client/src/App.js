@@ -12,6 +12,7 @@ import Footer from './components/Footer.js';
 import Home from './components/Home';
 import AboutUs from './components/AboutUs';
 import Contact from './components/Contact';
+import SubmitMessage from './components/SubmitMessage.js';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
               <Route path="/cart" exact component={Cart} />
               <Route path="/order" exact component={SubmitForm} />
               <Route path="/MyOrder" exact component={MyOrder} />
+              <Route path="/submitMessage" exact component={SubmitMessage} />
               <Route component={NotFound} />
             </Switch>
             <Footer />
