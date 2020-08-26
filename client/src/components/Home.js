@@ -55,7 +55,7 @@ function Home() {
               Calories count for all products{' '}
             </h5>
             <p className="card-text">
-              Customer will get the number of calories present in each of our product. above 100.
+              Customer will get the number of calories present in each of our product.
             </p>
           </div>
         </div>

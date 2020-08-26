@@ -109,6 +109,8 @@ function Contact() {
                 style={{ background: '#474853', color: '#F7FFFF', boxSizing: 'border-box' }}
                 id="inputEmail4 message"
                 name="message"
+                value={state.message}
+                onChange={changeHandler}
                 placeholder="Enter your massage for us here. We will get back to you within 2 business days."
                 rows="7"
               ></textarea>
