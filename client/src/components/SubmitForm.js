@@ -69,7 +69,7 @@ const SubmitForm = (Component) => {
     <div style={{ backgroundColor: '#F7FFF7' }}>
       <div className="container w-50 " id="contact">
         <h1 className="  font-weight-bold pt-5">Enter Detail</h1>
-        <div class="mb-5"></div>
+        <div className="mb-5"></div>
         <form className="" style={{ background: '#F7FFF7' }} onSubmit={submitHandler}>
           <div className="form-row " style={{ background: '#F7FFF7' }}>
             <div className="form-group  col-md-6">
@@ -151,7 +151,7 @@ const SubmitForm = (Component) => {
               ></input>
             </div>
 
-            <div class="form-group col-md-6 ">
+            <div className="form-group col-md-6 ">
               <input
                 type="text"
                 className="form-control  border-0 pl-3 "
@@ -164,17 +164,17 @@ const SubmitForm = (Component) => {
                 required
               ></input>
             </div>
-            <div class="form-group col-md-6 ">
+            <div className="form-group col-md-6 ">
               <input
                 type="text"
                 className="form-control  border-0 pl-3 text-light"
                 style={{ background: '#474853', boxSizing: 'border-box' }}
                 value={(1.375 * totalPrice).toFixed(2) + ' €'}
                 name="price"
-                readonly
+                readOnly
               ></input>
             </div>
-            <div class="form-group col ">
+            <div className="form-group col ">
               <input
                 type="text"
                 className="form-control  border-0 pl-3 "

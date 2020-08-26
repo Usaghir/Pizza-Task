@@ -103,9 +103,9 @@ function Contact() {
               ></input>
             </div>
 
-            <div class="form-group w-100 col ">
+            <div className="form-group w-100 col ">
               <textarea
-                class="form-control border-0 rounded-0 "
+                className="form-control border-0 rounded-0 "
                 style={{ background: '#474853', color: '#F7FFFF', boxSizing: 'border-box' }}
                 id="inputEmail4 message"
                 name="message"
