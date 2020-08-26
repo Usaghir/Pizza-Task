@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import './Component.css';
 
 function Contact() {
@@ -108,8 +107,7 @@ function Contact() {
               <textarea
                 class="form-control border-0 rounded-0 "
                 style={{ background: '#474853', color: '#F7FFFF', boxSizing: 'border-box' }}
-                id="inputEmail4"
-                id="message"
+                id="inputEmail4 message"
                 name="message"
                 placeholder="Enter your massage for us here. We will get back to you within 2 business days."
                 rows="7"

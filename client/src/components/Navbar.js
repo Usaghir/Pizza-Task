@@ -7,7 +7,7 @@ import './Component.css';
 const Navbar = () => {
   const { shoppingCart } = useContext(CartContext);
   return (
-    <nav class="navbar  fixed-top navbar-expand-lg  " style={{ background: '#474853' }}>
+    <nav className="navbar  fixed-top navbar-expand-lg  " style={{ background: '#474853' }}>
       <ul className="container">
         <li>
           <Link to="/" className=" ">
