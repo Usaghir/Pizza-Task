@@ -7,7 +7,7 @@ const Cart = () => {
   const { dispatch, shoppingCart, totalPrice } = useContext(CartContext);
 
   return (
-    <div className="card mt-3 justify-content-between align-items-center ">
+    <div className="card mb-0 pt-5 mt-5 pb-5 justify-content-between align-items-center ">
       <ul className="list-group-flush mt-5 ">
         {shoppingCart.length > 0 ? (
           shoppingCart.map((product) => (
@@ -45,10 +45,10 @@ const Cart = () => {
             </li>
           ))
         ) : (
-          <div className="card mb-4 pt-3 mt-5 center">
+          <div className="card mb-4 pt-3 mt-5 center" style={{ background: '#D2D4D3' }}>
             <div className="card-body">
-              <h5 className="card-title bold-text">Thanks for choosing TopPizza </h5>
-              <p className="card-text">
+              <h5 className="card-title bold-text font-bebas">Thanks for choosing TopPizza </h5>
+              <p className="card-text mt-5">
                 The shopping cart is empty please go to main page by clicking the logo on the top
                 left to select the pizzas again.
               </p>
@@ -97,7 +97,10 @@ const Cart = () => {
             <li className="list-group-item" style={{ background: '#D2D4D3' }}>
               <div className="center">
                 <Link to="/order">
-                  <button className="btn  btn-primary mt-3 mb-3" style={{ background: '#318fb5' }}>
+                  <button
+                    className="btn  btn-primary mt-3 font-bebas mb-3"
+                    style={{ background: '#318fb5' }}
+                  >
                     Click to Order
                   </button>
                 </Link>

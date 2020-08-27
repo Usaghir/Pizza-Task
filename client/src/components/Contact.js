@@ -27,35 +27,32 @@ function Contact() {
         message: state.message,
       })
       .then((res) => {
-        window.location = '/';
-        res.render();
-        console.log(res);
+        setState({
+          submitMessage: true,
+          firstName: '',
+          lastName: '',
+          email: '',
+          phoneNumber: '',
+          message: '',
+        });
       })
       .catch((err) => {
         alert(err);
       });
-    setState({
-      submitMessage: true,
-      firstName: '',
-      lastName: '',
-      email: '',
-      phoneNumber: '',
-      message: '',
-    });
   };
 
   return (
-    <div className="mt-5 pt-5" style={{ backgroundColor: '#F7FFFF' }}>
+    <div className="mt-5 pt-5 mb-5 pb-5" style={{ backgroundColor: '#FFFFFF' }}>
       <div className="container mt-5 pt-5 w-50 " id="contact">
         <h1 className="  font-weight-bold mb-5 pb-5">CONTACT</h1>
 
-        <form className="" style={{ background: '#F7FFFF' }} onSubmit={submitHandler}>
-          <div className="form-row " style={{ background: '#F7FFFF' }}>
+        <form className="" style={{ background: '#FFFFFF' }} onSubmit={submitHandler}>
+          <div className="form-row " style={{ background: '#FFFFFF' }}>
             <div className="form-group  col-md-6">
               <input
                 type="text"
                 className="form-control  border-0 pl-3"
-                style={{ backgroundColor: '#474853', color: '#F7FFFF', boxSizing: 'border-box' }}
+                style={{ backgroundColor: '#474853', color: '#FFFFFF', boxSizing: 'border-box' }}
                 id="inputEmail4"
                 placeholder="First Name"
                 value={state.firstName}
@@ -68,7 +65,7 @@ function Contact() {
               <input
                 type="text"
                 className="form-control  border-0 pl-3"
-                style={{ background: '#474853', color: '#F7FFFF', boxSizing: 'border-box' }}
+                style={{ background: '#474853', color: '#FFFFFF', boxSizing: 'border-box' }}
                 id="inputEmail4"
                 placeholder="Last Name"
                 value={state.lastName}
@@ -81,7 +78,7 @@ function Contact() {
               <input
                 type="text"
                 className="form-control  border-0 pl-3 "
-                style={{ background: '#474853', color: '#F7FFFF', boxSizing: 'border-box' }}
+                style={{ background: '#474853', color: '#FFFFFF', boxSizing: 'border-box' }}
                 id="inputEmail4"
                 placeholder="Email"
                 value={state.email}
@@ -94,7 +91,7 @@ function Contact() {
               <input
                 type="text"
                 className="form-control  border-0 pl-3 "
-                style={{ background: '#474853', color: '#F7FFFF', boxSizing: 'border-box' }}
+                style={{ background: '#474853', color: '#FFFFFF', boxSizing: 'border-box' }}
                 id="inputEmail4"
                 placeholder="Phone"
                 value={state.phoneNumber}
@@ -106,7 +103,7 @@ function Contact() {
             <div className="form-group w-100 col ">
               <textarea
                 className="form-control border-0 rounded-0 "
-                style={{ background: '#474853', color: '#F7FFFF', boxSizing: 'border-box' }}
+                style={{ background: '#474853', color: '#FFFFFF', boxSizing: 'border-box' }}
                 id="inputEmail4 message"
                 name="message"
                 value={state.message}
@@ -129,7 +126,11 @@ function Contact() {
             ''
           )}
           <div className="form-group">
-            <button type="submit" className="btn  w-25 mb-2 " style={{ background: '#318fb5' }}>
+            <button
+              type="submit"
+              className="btn font-bebas  w-25"
+              style={{ background: '#318fb5' }}
+            >
               Submit
             </button>
           </div>

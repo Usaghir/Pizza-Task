@@ -2,13 +2,13 @@ import React from 'react';
 
 function AboutUs() {
   return (
-    <div className="container pt-5 mt-5 mb-5 d-flex justify-content-center g-font">
+    <div className="container pt-5 mt-5 mb-5  pb-5 d-flex justify-content-center g-font">
       <div className="card w-100 pt-5 mt-5" style={{ background: '#D2D4D3' }}>
         <h1 className="  font-weight-bold">ABOUT</h1>
         <div className="card-body m-5 ">
           <h5
             className=" mb-2 card-header font-bebas "
-            style={{ background: '#474853', color: '#FAFFFF' }}
+            style={{ background: '#474853', color: '#FFFFFF' }}
           >
             Who we are
           </h5>
@@ -21,7 +21,7 @@ function AboutUs() {
           </p>
           <h5
             className=" mt-5 mb-2 card-header font-bebas"
-            style={{ background: '#474853', color: '#FAFFFF' }}
+            style={{ background: '#474853', color: '#FFFFFF' }}
           >
             Where we are
           </h5>
@@ -33,7 +33,7 @@ function AboutUs() {
           </p>
           <h5
             className=" mt-5 mb-2 card-header font-bebas"
-            style={{ background: '#474853', color: '#FAFFFF' }}
+            style={{ background: '#474853', color: '#FFFFFF' }}
           >
             History
           </h5>

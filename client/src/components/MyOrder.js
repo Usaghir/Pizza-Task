@@ -47,14 +47,14 @@ class MyOrder extends React.Component {
   render() {
     const { pizzas, customers } = this.state;
     return (
-      <div className="mt-5 pt-5 ">
+      <div className="mt-5 pt-5 mb-5 pb-5">
         <div className="mt-5 pt-5 center offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 padding">
           <form className=" center" onSubmit={this.submitHandler}>
             <div className="form-group">
               <input
                 type="text"
-                className="center form-control"
-                style={{ backgroundColor: '#474853', color: '#F7FFFF', boxSizing: 'border-box' }}
+                className="center form-control "
+                style={{ backgroundColor: '#474853', color: '#FFFFFF', boxSizing: 'border-box' }}
                 id="inputAddress"
                 placeholder=" Please enter the correct email address to see the receipt of your orders:"
                 value={this.state.email_para}
@@ -63,7 +63,7 @@ class MyOrder extends React.Component {
                 required
               ></input>
             </div>
-            <button type="submit" className="btn " style={{ background: '#318fb5' }}>
+            <button type="submit" className="btn font-bebas" style={{ background: '#318fb5' }}>
               Submit
             </button>
           </form>

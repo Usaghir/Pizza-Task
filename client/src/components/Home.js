@@ -5,7 +5,7 @@ import './Component.css';
 
 function Home() {
   return (
-    <div className="mt-5 pt-5 " style={{ backgroundColor: '#F7FFFF' }}>
+    <div className="mt-5 pt-5 mb-5 pb-5" style={{ backgroundColor: '#FFFFFF' }}>
       <div className="container pt-5 mt-5 d-flex justify-content-center">
         <div className="card w-75 ">
           <div className="card-body main-left" style={{ backgroundImage: `url(${MainTopLeft})` }}>

@@ -51,32 +51,20 @@ const SubmitForm = (Component) => {
       .catch((err) => {
         alert(err);
       });
-    setState({
-      submitMessage: true,
-      firstName: '',
-      lastName: '',
-      email: '',
-      phoneNumber: '',
-      address: '',
-      city: '',
-      postcode: '',
-      other: '',
-      total: 0,
-    });
   };
 
   return (
-    <div style={{ backgroundColor: '#F7FFF7' }}>
+    <div style={{ backgroundColor: '#FFFFFF' }}>
       <div className="container w-50 " id="contact">
         <h1 className="  font-weight-bold pt-5">Enter Detail</h1>
         <div className="mb-5"></div>
-        <form className="" style={{ background: '#F7FFF7' }} onSubmit={submitHandler}>
-          <div className="form-row " style={{ background: '#F7FFF7' }}>
+        <form className="" style={{ background: '#FFFFFF' }} onSubmit={submitHandler}>
+          <div className="form-row " style={{ background: '#FFFFFF' }}>
             <div className="form-group  col-md-6">
               <input
                 type="text"
                 className="form-control  border-0 pl-3"
-                style={{ backgroundColor: '#474853', color: '#f7ffff', boxSizing: 'border-box' }}
+                style={{ backgroundColor: '#474853', color: '#FFFFFF', boxSizing: 'border-box' }}
                 id="inputEmail4"
                 placeholder="First Name"
                 value={state.firstName}
@@ -89,7 +77,7 @@ const SubmitForm = (Component) => {
               <input
                 type="text"
                 className="form-control  border-0 pl-3"
-                style={{ background: '#474853', color: '#f7ffff', boxSizing: 'border-box' }}
+                style={{ background: '#474853', color: '#FFFFFF', boxSizing: 'border-box' }}
                 id="inputEmail4"
                 placeholder="Last Name"
                 value={state.lastName}
@@ -102,7 +90,7 @@ const SubmitForm = (Component) => {
               <input
                 type="text"
                 className="form-control  border-0 pl-3 "
-                style={{ background: '#474853', color: '#f7ffff', boxSizing: 'border-box' }}
+                style={{ background: '#474853', color: '#FFFFFF', boxSizing: 'border-box' }}
                 id="inputEmail4"
                 placeholder="Email"
                 value={state.email}
@@ -115,7 +103,7 @@ const SubmitForm = (Component) => {
               <input
                 type="text"
                 className="form-control  border-0 pl-3 "
-                style={{ background: '#474853', color: '#f7ffff', boxSizing: 'border-box' }}
+                style={{ background: '#474853', color: '#FFFFFF', boxSizing: 'border-box' }}
                 id="inputEmail4"
                 placeholder="Phone"
                 value={state.phoneNumber}
@@ -127,7 +115,7 @@ const SubmitForm = (Component) => {
               <input
                 type="text"
                 className="form-control  border-0 pl-3 "
-                style={{ background: '#474853', color: '#f7ffff', boxSizing: 'border-box' }}
+                style={{ background: '#474853', color: '#FFFFFF', boxSizing: 'border-box' }}
                 id="inputEmail4"
                 placeholder="City"
                 value={state.city}
@@ -141,7 +129,7 @@ const SubmitForm = (Component) => {
               <input
                 type="text"
                 className="form-control  border-0 pl-3 "
-                style={{ background: '#474853', color: '#f7ffff', boxSizing: 'border-box' }}
+                style={{ background: '#474853', color: '#FFFFFF', boxSizing: 'border-box' }}
                 id="inputEmail4"
                 placeholder="Post Code"
                 value={state.postcode}
@@ -155,7 +143,7 @@ const SubmitForm = (Component) => {
               <input
                 type="text"
                 className="form-control  border-0 pl-3 "
-                style={{ background: '#474853', color: '#f7ffff', boxSizing: 'border-box' }}
+                style={{ background: '#474853', color: '#FFFFFF', boxSizing: 'border-box' }}
                 id="inputEmail4"
                 placeholder="Address"
                 value={state.address}
@@ -178,7 +166,7 @@ const SubmitForm = (Component) => {
               <input
                 type="text"
                 className="form-control  border-0 pl-3 "
-                style={{ background: '#474853', color: '#f7ffff', boxSizing: 'border-box' }}
+                style={{ background: '#474853', color: '#FFFFFF', boxSizing: 'border-box' }}
                 id="inputEmail4"
                 placeholder="Note for the delivery"
                 value={state.other}
@@ -200,7 +188,11 @@ const SubmitForm = (Component) => {
             ''
           )}
           <div className="form-group">
-            <button type="submit" className="btn  w-25 mb-2 " style={{ background: '#86b3d1' }}>
+            <button
+              type="submit"
+              className="btn  w-25 mb-2 font-bebas"
+              style={{ background: '#318fb5' }}
+            >
               Submit
             </button>
           </div>
