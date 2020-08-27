@@ -9,6 +9,7 @@ class OrderHistory extends React.Component {
       date:
         new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate(),
       email_para: '',
+      submitMessage: false,
     };
     this.getPizzas = this.getPizzas.bind(this);
     this.getCustomers = this.getCustomers.bind(this);
@@ -43,6 +44,8 @@ class OrderHistory extends React.Component {
         console.log(error);
       });
     this.setState({ customers: data.data });
+    this.setState({ email_para: '' });
+    this.setState({ submitMessage: true });
   }
   render() {
     const { pizzas, customers } = this.state;
@@ -63,9 +66,27 @@ class OrderHistory extends React.Component {
                 required
               ></input>
             </div>
-            <button type="submit" className="btn font-bebas mb-5" style={{ background: '#318fb5' }}>
-              Submit
-            </button>
+            {this.state.submitMessage ? (
+              <div className="form-group ">
+                <div
+                  className="form-control  border-0 pl-3 "
+                  style={{ background: '#86b3d1', boxSizing: 'border-box' }}
+                >
+                  You can see all your order invoices below.
+                </div>
+              </div>
+            ) : (
+              ''
+            )}
+            <div>
+              <button
+                type="submit"
+                className="btn font-bebas mb-5"
+                style={{ background: '#318fb5' }}
+              >
+                Submit
+              </button>
+            </div>
           </form>
         </div>
         <ul>
