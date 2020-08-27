@@ -4,7 +4,7 @@ class Footer extends Component {
   render() {
     let year = new Date().getFullYear();
     return (
-      <nav className="" style={{ background: '#318fb5', height: 200 }}>
+      <nav style={{ background: '#318fb5', height: 200 }}>
         <ul className="contact-items row d-flex justify-content-center pt-5 mb-0">
           <li>
             <div className="mr-3">

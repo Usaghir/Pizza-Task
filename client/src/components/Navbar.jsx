@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { CartContext } from '../global/CartContext';
+import { CartContext } from '../global/CartContext.jsx';
 import topizza from './topizza.png';
 import './Component.css';
 
@@ -50,7 +50,7 @@ const Navbar = () => {
         <li>
           <div className=" mr-3">
             <button className="btn font-bebas" style={{ background: '#318fb5' }}>
-              <Link className="text-decoration-none" to="/MyOrder">
+              <Link className="text-decoration-none" to="/orderHistory">
                 <div className=" ">
                   MY ORDER
                   <span className="badge badge-sm mt-2"></span>

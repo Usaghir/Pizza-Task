@@ -1,6 +1,6 @@
 import React from 'react';
 
-function AboutUs() {
+function About() {
   return (
     <div className="container pt-5 mt-5 mb-5  pb-5 d-flex justify-content-center g-font">
       <div className="card w-100 pt-5 mt-5" style={{ background: '#D2D4D3' }}>
@@ -49,4 +49,4 @@ function AboutUs() {
   );
 }
 
-export default AboutUs;
+export default About;

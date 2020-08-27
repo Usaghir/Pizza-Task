@@ -1,12 +1,12 @@
 import React, { createContext, useState } from 'react';
-import Italian from '../imgs/Italian.jpeg';
-import Maxicon from '../imgs/Maxicon.jpeg';
-import Kebab from '../imgs/Kebab.jpeg';
-import Mini from '../imgs/Mini.jpeg';
-import Shrimps from '../imgs/Shrimps.jpeg';
-import Spanish from '../imgs/Spanish.jpeg';
-import Vegetable from '../imgs/Vegetable.jpeg';
-import Pepperoni from '../imgs/Pepperoni.jpeg';
+import Italian from '../images/Italian.jpeg';
+import Mexican from '../images/Mexican.jpeg';
+import Kebab from '../images/Kebab.jpeg';
+import Mini from '../images/Mini.jpeg';
+import Shrimps from '../images/Shrimps.jpeg';
+import Spanish from '../images/Spanish.jpeg';
+import Vegetable from '../images/Vegetable.jpeg';
+import Pepperoni from '../images/Pepperoni.jpeg';
 export const ProductContext = createContext();
 
 const ProductContextProvider = (props) => {
@@ -20,9 +20,9 @@ const ProductContextProvider = (props) => {
     },
     {
       id: 2,
-      name: 'Maxicon Pizza',
+      name: 'Mexican Pizza',
       price: 20,
-      image: Maxicon,
+      image: Mexican,
       description: 'Garlic, tomato sauce, mozzarella, chicken and jalapeños.',
     },
     {

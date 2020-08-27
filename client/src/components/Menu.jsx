@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { ProductContext } from '../global/ProductContext';
-import { CartContext } from '../global/CartContext';
+import { ProductContext } from '../global/ProductContext.jsx';
+import { CartContext } from '../global/CartContext.jsx';
 import './Component.css';
 
 const Menu = () => {

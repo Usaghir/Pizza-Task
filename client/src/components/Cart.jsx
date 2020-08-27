@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { CartContext } from '../global/CartContext';
+import { CartContext } from '../global/CartContext.jsx';
 import { Link } from 'react-router-dom';
 import './Component.css';
 
@@ -27,6 +27,7 @@ const Cart = () => {
 
               <button
                 className="mr-3 btn-sm"
+                style={{ background: '#318fb5' }}
                 onClick={() => dispatch({ type: 'DEC', id: product.id })}
               >
                 <i className="fas fa-minus"></i>
@@ -34,6 +35,7 @@ const Cart = () => {
               <span className="mr-3">{product.qty}</span>
               <button
                 className="mr-3 btn-sm"
+                style={{ background: '#318fb5' }}
                 onClick={() => dispatch({ type: 'INC', id: product.id })}
               >
                 <i className="fas fa-plus"></i>
@@ -46,13 +48,18 @@ const Cart = () => {
           ))
         ) : (
           <div className="card mb-4 pt-3 mt-5 center" style={{ background: '#D2D4D3' }}>
-            <div className="card-body">
-              <h5 className="card-title bold-text font-bebas">Thanks for choosing TopPizza </h5>
-              <p className="card-text mt-5">
-                The shopping cart is empty please go to main page by clicking the logo on the top
-                left to select the pizzas again.
+            <div className="card-body m-5 ">
+              <h5
+                className=" mb-2 card-header font-bebas "
+                style={{ background: '#474853', color: '#FFFFFF' }}
+              >
+                Thanks for visiting Topizza
+              </h5>
+
+              <p className=" mt-5 card-text">
+                Please note that your shopping cart is empty and kindly choose any of the option
+                from the top navigation bar.
               </p>
-              <p className="card-text"></p>
             </div>
           </div>
         )}
@@ -82,13 +89,13 @@ const Cart = () => {
               </h6>
               <h6
                 className="card-title badge badge-pill product-name badge-info mr-3"
-                style={{ background: '#AAA0A0' }}
+                style={{ background: '#474853' }}
               >
                 € {(1.375 * totalPrice).toFixed(2)}
               </h6>
               <h6
                 className="card-title badge badge-pill badge-info mr-3 product-name"
-                style={{ background: '#AAA0A0' }}
+                style={{ background: '#474853' }}
               >
                 ${(1.16 * 1.375 * totalPrice).toFixed(2)}
               </h6>
@@ -96,7 +103,7 @@ const Cart = () => {
 
             <li className="list-group-item" style={{ background: '#D2D4D3' }}>
               <div className="center">
-                <Link to="/order">
+                <Link to="/orderForm">
                   <button
                     className="btn  btn-primary mt-3 font-bebas mb-3"
                     style={{ background: '#318fb5' }}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import MainTopLeft from '../imgs/HomeMain.jpg';
+import MainTopLeft from '../images/HomeMain.jpg';
 import './Component.css';
 
 function Home() {

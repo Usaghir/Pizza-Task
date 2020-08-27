@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import './MyOrder.css';
+import './OrderHistory.css';
 
-class MyOrder extends React.Component {
+class OrderHistory extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -63,7 +63,7 @@ class MyOrder extends React.Component {
                 required
               ></input>
             </div>
-            <button type="submit" className="btn font-bebas" style={{ background: '#318fb5' }}>
+            <button type="submit" className="btn font-bebas mb-5" style={{ background: '#318fb5' }}>
               Submit
             </button>
           </form>
@@ -74,14 +74,17 @@ class MyOrder extends React.Component {
               const totalPrice = customer.total_price;
               return (
                 <li key={c_index}>
-                  <div className="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 padding">
-                    <div className="card">
-                      <div className="card-header p-4">
+                  <div className="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 padding mt-5">
+                    <div className="card" style={{ background: '#D2D4D3' }}>
+                      <div
+                        className="card-header p-4"
+                        style={{ background: '#474853', color: '#FFFFFF' }}
+                      >
                         <a className="pt-2 d-inline-block" href="index.html" data-abc="true">
                           <small> {new Date().getFullYear()}, All right reserved by ToPizza </small>
                         </a>
                         <div className="float-right">
-                          <h3 className="mb-0">Invoice #ToP00{customer.order_id}</h3>
+                          <h3 className="mb-0 ">Invoice #ToP00{customer.order_id}</h3>
                           <p>{customer.order_date}</p>
                         </div>
                       </div>
@@ -89,15 +92,15 @@ class MyOrder extends React.Component {
                         <div className="row mb-4">
                           <div className="col-sm-6">
                             <h5 className="mb-3">From:</h5>
-                            <h4 className="text-dark mb-1">ToPizza AB</h4>
-                            <div>Rörsjögatan 18,</div>
-                            <div>21137, Malmö, Sweden</div>
+                            <h4 className="text-dark mb-1 font-bebas">ToPizza AB</h4>
+                            <div>Rörsjöparken 200,</div>
+                            <div>22112, Stockholm, Sweden</div>
                             <div>Email: contact@Topizza.com</div>
                             <div>Phone: +46 04600000 </div>
                           </div>
                           <div className="col-sm-6 ">
                             <h5 className="mb-3">To:</h5>
-                            <h4 className="text-dark mb-1">
+                            <h4 className="text-dark mb-1 font-bebas">
                               {customer.first_name + ' ' + customer.last_name}
                             </h4>
                             <div>{customer.address}</div>
@@ -107,27 +110,32 @@ class MyOrder extends React.Component {
                           </div>
                         </div>
                         <div className="table-responsive-sm">
-                          <table className="table table-striped">
+                          <table className="table font-weight-bold">
                             <thead>
                               <tr>
-                                <th className="center">#</th>
-                                <th className="left">Item</th>
-                                <th className="right">Price</th>
-                                <th className="center">Qty</th>
-                                <th className="right">Total</th>
+                                <th className="center font-weight-bold border-0">#</th>
+                                <th className="left  font-weight-bold border-0">Item</th>
+                                <th className="right  font-weight-bold border-0">Price</th>
+                                <th className="center  font-weight-bold border-0">Qty</th>
+                                <th className="right  font-weight-bold border-0">Total</th>
                               </tr>
                             </thead>
                             {pizzas &&
                               pizzas.map((pizza, p_index) => {
                                 if (customer.order_id === pizza.order_id)
                                   return (
-                                    <tbody key={p_index}>
+                                    <tbody
+                                      key={p_index}
+                                      style={{ background: '#474853', color: '#FFFFFF' }}
+                                    >
                                       <tr>
-                                        <td className="center">{p_index + 1}</td>
-                                        <td className="left strong">{pizza.pizza_name}</td>
-                                        <td className="right">€{pizza.pizza_price}</td>
-                                        <td className="center">{pizza.pizza_quantity}</td>
-                                        <td className="right">
+                                        <td className="center border-0">{p_index + 1}</td>
+                                        <td className="left strong border-0 font-bebas">
+                                          {pizza.pizza_name}
+                                        </td>
+                                        <td className="right border-0">€{pizza.pizza_price}</td>
+                                        <td className="center border-0">{pizza.pizza_quantity}</td>
+                                        <td className="right border-0">
                                           €{(pizza.pizza_price * pizza.pizza_quantity).toFixed(2)}
                                         </td>
                                       </tr>
@@ -144,25 +152,25 @@ class MyOrder extends React.Component {
                               <tbody>
                                 <tr>
                                   <td className="left">
-                                    <strong className="text-dark">Total</strong>
-                                  </td>
-                                  <td className="right">€{(1 * totalPrice).toFixed(2)}</td>
-                                </tr>
-                                <tr>
-                                  <td className="left">
-                                    <strong className="text-dark">Delivery (10%)</strong>
+                                    <strong className="text-dark font-weight-bold font-bebas">
+                                      Delivery (10%)
+                                    </strong>
                                   </td>
                                   <td className="right">€{(0.1 * totalPrice).toFixed(2)}</td>
                                 </tr>
                                 <tr>
                                   <td className="left">
-                                    <strong className="text-dark">VAT (25%)</strong>
+                                    <strong className="text-dark font-weight-bold font-bebas">
+                                      VAT (25%)
+                                    </strong>
                                   </td>
                                   <td className="right">€{(0.275 * totalPrice).toFixed(2)}</td>
                                 </tr>
                                 <tr>
                                   <td className="left">
-                                    <strong className="text-dark">Total</strong>
+                                    <strong className="text-dark font-weight-bold font-bebas">
+                                      Total
+                                    </strong>
                                   </td>
                                   <td className="right">
                                     <strong className="text-dark">
@@ -180,10 +188,9 @@ class MyOrder extends React.Component {
                           </div>
                         </div>
                       </div>
-                      <div className="card-footer center bg-white">
+                      <div className="card-footer center" style={{ background: '#318fb5' }}>
                         <small className="mb-0 center">
-                          Rörsjögatan 18, 21137, Malmö, Sweden, Email: contact@Topizza.com,Email:
-                          contact@Topizza.com
+                          Rörsjöparken 200, 22112, Stockholm, Sweden, Email: contact@Topizza.com
                         </small>
                       </div>
                     </div>
@@ -197,4 +204,4 @@ class MyOrder extends React.Component {
   }
 }
 
-export default MyOrder;
+export default OrderHistory;
