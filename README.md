@@ -16,7 +16,7 @@ Topizza is a demo online pizza store application where the user can see some inf
 1. -[x] The Card page should contain history of the places orders like payment receipt or invoices.
 1. -[x] The Order History page should have selected items and cost information regarding pizzas before placing order.
 1. -[x] The Order Form page should contain form to add the customer detail and cost need to pay to places the orders.
-1. [x] Not Found page should be available in case user put wrong end-point in the url.
+1. -[x] Not Found page should be available in case user put wrong end-point in the url.
 1. -[x] A client should be able to put several pizzas into cart, and the quantity must be defined both while
    inside the cart and outside the cart.
 1. -[x] Total price of each order must be calculated and shown in euros and in dollars.
