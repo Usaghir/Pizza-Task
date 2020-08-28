@@ -2,36 +2,51 @@
 
 ## Introduction
 
-Topizza is a small online pizza store application where the user can see the pizzas and choose the pizzs and place in shopping cart to adjust the order by adding, subtracting or removing the order items and then see the cost of each pizza, total and additional cost as well. Then user can place the form by filling the detail and after. User can see the history of the order by going to my order page when each use who placed the order need to provide the email to see the history as invoice if the order is places using that email.
+Topizza is a demo online pizza store application where the user can see some information regarding the online pizza shop and choose the pizzas. User can place pizzas in shopping cart to adjust the order by adding, subtracting or removing the order items and then user can see the cost of each pizza, total and additional cost of pizzas as well. User can place the order by filling the detail. User can see the history of the order by going to my order page when user placed the order need to provide just email address to see the history as invoice if the order is placed using that email.
 
 ## Requirements
 
-1. -[x] The menu page should contain at least 8 pizzas
-2. -[x] Login is not required but could be available for checking the history of orders
-3. -[x] Your clients should be able to choose pizzas directly from the menu
-4. -[x] You can decide 4. what else you want in the menu
-5. -[x] Adding a description for each pizza would be a nice decision
-6. -[x] Don’t proceed to the payment page. The last action from a client will be filling in the order form (address,
-   name, surname, etc.) to get a confirmation that the order has been received
-7. -[x] A client should be able to put several pizzas into cart, and the quantity must be defined both while
-   outside the cart and in the cart
-8. -[x] Total price of each order must be calculated and shown in euros and in dollars
-9. [x] Don’t forget to add delivery costs to the final bill
+# Completed
 
-## Technologies used
+1. -[x] There should be at least some routing pages (Home, Menu, About, Contact, Order History, Cart, Order Form, Not Found).
+1. -[x] The Home page should contain summary information.
+1. -[x] The Menu page should contain some pizzas to choose with description.
+1. -[x] The About page should have some general company information.
+1. -[x] The Contact page should contact from for submitting the message to some email.
+1. -[x] The Card page should contain history of the places orders like payment receipt or invoices.
+1. -[x] The Order History page should have selected items and cost information regarding pizzas before placing order.
+1. -[x] The Order Form page should contain form to add the customer detail and cost need to pay to places the orders.
+1. [x] Not Found page should be available in case user put wrong end-point in the url.
+1. -[x] A client should be able to put several pizzas into cart, and the quantity must be defined both while
+   inside the cart and outside the cart.
+1. -[x] Total price of each order must be calculated and shown in euros and in dollars.
+1. [x] There should be delivery and VAT costs in the final bill.
 
-This full-stack application is based on Spring, PostgreSQL, React, React router and Axios. Check the following links for documentation and guides:
+# Pending
 
+1. -[] Responsive design.
+1. -[] User login system.
+1. -[] Payment gateway integration.
+1. -[] More items in the menu.
+1. -[] Dynamic Home page presentation items.
+1. -[] User input validation.
+1. -[] Dockerize the whole application.
+
+## Tools and technologies used
+
+Visual Studio Code
+Terminal
+JavaScript
 React
+Boot Strap
 Context API
 Node JS
 Express
 PostgreSQL
 Axios
-Postman
 Heroku
-Axios
 NPM
+Git
 
 ## Main parts
 
@@ -41,8 +56,6 @@ Frontend (React, Context API)
 Backend (Node, Express)
 Database (Postgres)
 
-It is necessary to set up and start these three components in the order above for everything to work.
-
 ## Prerequisites
 
 Install Nodejs
@@ -51,6 +64,8 @@ Install React
 Install CLI
 Install Git
 Install Postgres
+
+It is necessary to set up and start these three components in the order below for everything to work.
 
 Starting the database
 
@@ -65,5 +80,10 @@ In application root folder.
 
 Starting the frontend development server
 In client folder
+
 `$ npm install`
 `$ npm start`
+
+# Link to the current version of application
+
+[www.topizza.herokuapp.com](https://topizza.herokuapp.com)
