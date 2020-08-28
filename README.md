@@ -24,13 +24,13 @@ Topizza is a demo online pizza store application where the user can see some inf
 
 # Pending
 
-1. -[] Responsive design.
-1. -[] User login system.
-1. -[] Payment gateway integration.
-1. -[] More items in the menu.
-1. -[] Dynamic Home page presentation items.
-1. -[] User input validation.
-1. -[] Dockerize the whole application.
+1. -[ ] Responsive design.
+1. -[ ] User login system.
+1. -[ ] Payment gateway integration.
+1. -[ ] More items in the menu.
+1. -[ ] Dynamic Home page presentation items.
+1. -[ ] User input validation.
+1. -[ ] Dockerize the whole application.
 
 ## Tools and technologies used
 
