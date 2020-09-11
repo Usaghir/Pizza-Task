@@ -33,3 +33,5 @@ input:-webkit-autofill {
 button>.active {
   color: #ffffff;
 }
+
+@media all and (max-width)

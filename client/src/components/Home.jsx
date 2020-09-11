@@ -48,8 +48,8 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="d-flex justify-content-center">
-        <div className="card" style={{ width: 865, background: '#D2D4D3' }}>
+      <div className="container d-flex justify-content-center">
+        <div className="card w-100" style={{ background: '#D2D4D3' }}>
           <div className="card-body ">
             <h5 className="card-title font-bebas" style={{ color: '#af4448' }}>
               Calories count for all products{' '}
