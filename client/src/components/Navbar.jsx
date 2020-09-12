@@ -49,7 +49,7 @@ const Navbar = () => {
         </li>
         <li>
           <div className="">
-            <button className="btn font-bebas " style={{ width: '120px', background: '#318fb5' }}>
+            <button className="btn font-bebas " style={{ width: '130px', background: '#318fb5' }}>
               <Link className="text-decoration-none" to="/orderHistory">
                 <div className=" ">
                   MY ORDER
@@ -64,7 +64,7 @@ const Navbar = () => {
             {shoppingCart.length ? (
               <button
                 className="btn btn-primary font-bebas "
-                style={{ width: '120px', background: '#318fb5' }}
+                style={{ width: '130px', background: '#318fb5' }}
               >
                 <Link className="text-decoration-none" to="/cart">
                   <i className="fas fa-cart-plus">
