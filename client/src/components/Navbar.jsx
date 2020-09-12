@@ -7,12 +7,12 @@ import './Component.css';
 const Navbar = () => {
   const { shoppingCart } = useContext(CartContext);
   return (
-    <nav className="navbar  fixed-top navbar-expand-lg  " style={{ background: '#474853' }}>
-      <ul className="container">
+    <nav className="navbar navbar-expand-lg mob-height sticky" style={{ background: '#474853' }}>
+      <ul className="container fle ">
         <li>
           <Link to="/" className=" ">
             <img
-              className="navbar-brand mt-3 abc border-primary"
+              className="navbar-brand abc border-primary"
               src={topizza}
               alt="#"
               style={{ width: 150 }}
@@ -48,8 +48,8 @@ const Navbar = () => {
           </div>
         </li>
         <li>
-          <div className=" mr-3">
-            <button className="btn font-bebas" style={{ background: '#318fb5' }}>
+          <div className="">
+            <button className="btn font-bebas " style={{ width: '120px', background: '#318fb5' }}>
               <Link className="text-decoration-none" to="/orderHistory">
                 <div className=" ">
                   MY ORDER
@@ -62,7 +62,10 @@ const Navbar = () => {
         <li>
           <div className=" ">
             {shoppingCart.length ? (
-              <button className="btn btn-primary font-bebas" style={{ background: '#318fb5' }}>
+              <button
+                className="btn btn-primary font-bebas "
+                style={{ width: '120px', background: '#318fb5' }}
+              >
                 <Link className="text-decoration-none" to="/cart">
                   <i className="fas fa-cart-plus">
                     <span className="badge badge-light badge-sm mt-2">

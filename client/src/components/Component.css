@@ -34,4 +34,41 @@ button>.active {
   color: #ffffff;
 }
 
-@media all and (max-width)
+.wid {
+  width: 75%;
+}
+
+.disp-bot-box {
+  display: none;
+}
+
+@media screen and (max-width: 750px) {
+  .disp-right-box {
+    display: none;
+  }
+  .disp-bot-box {
+    display: block;
+  }
+  .wid {
+    width: 100%;
+  }
+  .fle {
+    display: flex;
+    flex-direction: column;
+  }
+  .mob-height {
+    height: 75%;
+  }
+  .flex-dir {
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+}

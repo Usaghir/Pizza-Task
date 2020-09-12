@@ -9,11 +9,11 @@ const Menu = () => {
   const { dispatch } = useContext(CartContext);
 
   return (
-    <div className="container d-flex mt-5 pt-5 mb-5 pb-5 justify-content-center">
-      <div className="card mt-5 pt-5" style={{ background: '#D2D4D3' }}>
+    <div className="container  mt-5 pt-5 mb-5 pb-5 ">
+      <div className="card  mt-5 pt-5" style={{ background: '#D2D4D3' }}>
         <div className="row w-100 ">
           {products.map((product) => (
-            <div key={product.id} className="m-auto ">
+            <div key={product.id} className="m-3  ">
               <div>
                 <img
                   src={product.image}

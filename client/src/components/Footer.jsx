@@ -29,8 +29,7 @@ class Footer extends Component {
         </ul>
 
         <div className="contact-items row d-flex justify-content-center">
-          {' '}
-          {year}, All right reserved by ToPizza{' '}
+          Copyright © {year}, All right reserved by Topizza
         </div>
       </nav>
     );
