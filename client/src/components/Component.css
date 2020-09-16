@@ -16,7 +16,10 @@ body {
 
 /* Change the white to any color ;) */
 
-input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px #474853 inset !important;
 }
 
@@ -30,7 +33,7 @@ input:-webkit-autofill {
   box-sizing: padding-box;
 }
 
-button>.active {
+button > .active {
   color: #ffffff;
 }
 
@@ -42,7 +45,12 @@ button>.active {
   display: none;
 }
 
-@media screen and (max-width: 750px) {
+.mar-mob {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+@media screen and (max-width: 997px) {
   .disp-right-box {
     display: none;
   }
@@ -65,7 +73,7 @@ button>.active {
   }
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 997px) {
   .sticky {
     position: sticky;
     top: 0;

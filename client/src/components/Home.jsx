@@ -30,20 +30,22 @@ function Home() {
               <p className="card-text">Get the delivery in your door step with in an hour.</p>
             </div>
           </div>
-          <div className="card w-100 ">
-            <div className="card-body " style={{ background: '#D2D4D3' }}>
+          <div className="card w-100 " style={{ background: '#D2D4D3' }}>
+            <div className="card-body">
               <h5 className="card-title font-bebas" style={{ color: '#af4448' }}>
-                Bulk Orders
+                Fast Delivery
               </h5>
               <p className="card-text">Customers can book orders for events and ceremonies.</p>
             </div>
           </div>
-          <div className="card w-100 ">
-            <div className="card-body" style={{ background: '#D2D4D3' }}>
+          <div className="card w-100 " style={{ background: '#D2D4D3' }}>
+            <div className="card-body">
               <h5 className="card-title font-bebas" style={{ color: '#af4448' }}>
-                Free Delivery
+                Fast Delivery
               </h5>
-              <p className="card-text">Free delivery for customers on all orders above 100.</p>
+              <p className="card-text">
+                Customer will get the number of calories present in each of our product.
+              </p>
             </div>
           </div>
         </div>

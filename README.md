@@ -21,10 +21,10 @@ Topizza is a demo online pizza store application where the user can see some inf
    inside the cart and outside the cart.
 1. -[x] Total price of each order must be calculated and shown in euros and in dollars.
 1. [x] There should be delivery and VAT costs in the final bill.
+1. -[X] Responsive design.
 
 # Pending
 
-1. -[ ] Responsive design.
 1. -[ ] User login system.
 1. -[ ] Payment gateway integration.
 1. -[ ] More items in the menu.

@@ -44,7 +44,7 @@ function Contact() {
   return (
     <div className="mt-5 pt-5 mb-5 pb-5" style={{ backgroundColor: '#FFFFFF' }}>
       <div className="container mt-5 pt-5 w-50 " id="contact">
-        <h1 className="  font-weight-bold mb-5 pb-5">CONTACT</h1>
+        <h1 className="  font-weight-bold mb-5 pb-5 ">CONTACT</h1>
 
         <form className="" style={{ background: '#FFFFFF' }} onSubmit={submitHandler}>
           <div className="form-row " style={{ background: '#FFFFFF' }}>
@@ -126,11 +126,7 @@ function Contact() {
             ''
           )}
           <div className="form-group">
-            <button
-              type="submit"
-              className="btn font-bebas  w-25"
-              style={{ background: '#318fb5' }}
-            >
+            <button type="submit" className="btn font-bebas" style={{ background: '#318fb5' }}>
               Submit
             </button>
           </div>
