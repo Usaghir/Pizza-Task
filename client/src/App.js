@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
 import OrderHistory from './components/OrderHistory.jsx';
 import ProductContextProvider from './global/ProductContext.jsx';
@@ -18,20 +18,20 @@ function App() {
     <div className="App">
       <ProductContextProvider>
         <CartContextProvider>
-          <Router>
+          <BrowserRouter>
             <Navbar />
-            <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/menu" exact component={Menu} />
-              <Route path="/about" exact component={About} />
-              <Route path="/contact" exact component={Contact} />
-              <Route path="/cart" exact component={Cart} />
-              <Route path="/orderForm" exact component={OrderForm} />
-              <Route path="/orderHistory" exact component={OrderHistory} />
-              <Route component={NotFound} />
-            </Switch>
+            <Routes>
+              <Route exact path="/"  element={<Home />} />
+              <Route path="/menu" exact element={<Menu />} />
+              <Route path="/about" exact element={ <About />} />
+              <Route path="/contact" exact element={ <Contact />} />
+              <Route path="/cart" exact element={ <Cart />} />
+              <Route path="/orderForm" exact element={ <OrderForm />} />
+              <Route path="/orderHistory" exact element={ <OrderHistory />} />
+              <Route element={<NotFound/>} />
+            </Routes>
             <Footer />
-          </Router>
+          </BrowserRouter>
         </CartContextProvider>
       </ProductContextProvider>
     </div>

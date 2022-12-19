@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json()); //req.body
 
 //view engine setup
-app.engine('handlebars', exphbs());
+app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
 
 //Body Parser middleware
