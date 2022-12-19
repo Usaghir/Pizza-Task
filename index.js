@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json()); //req.body
 
 //view engine setup
-app.engine('handlebars', exphbs());
+app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
 
 //Body Parser middleware
@@ -117,7 +117,7 @@ app.post('/send', async (req, res) => {
       secure: false, // true for 465, false for other ports
       auth: {
         user: 'contact@rajaumersaghir.com', // generated ethereal user
-        pass: '1Pak0Swed114#', // generated ethereal password
+        pass: '#abfr101@', // generated ethereal password
       },
     });
 

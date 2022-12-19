@@ -1,11 +1,11 @@
 {
   "name": "server",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "pizza task",
   "main": "index.js",
   "engines": {
-    "node": "12.18.0",
-    "npm": "6.14.4"
+    "node": "18.12.1",
+    "npm": "9.2.0"
   },
   "scripts": {
     "start": "node index.js",
@@ -14,13 +14,15 @@
   "author": "Raja Umer",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.19.0",
+    "body-parser": "^1.20.1",
     "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^5.1.0",
-    "nodemailer": "^6.4.11",
-    "nodemon": "^2.0.4",
-    "pg": "^8.3.3"
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
+    "node": "^18.12.1",
+    "nodemailer": "^6.8.0",
+    "nodemon": "^2.0.20",
+    "npm": "^9.2.0",
+    "pg": "^8.8.0"
   }
 }
