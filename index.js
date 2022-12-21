@@ -156,6 +156,7 @@ app.get('/order', async (req, res) => {
 app.get('/order/:id', async (req, res) => {
   try {
     const { id } = req.params;
+    console.log(id);
     const ord = await pool.query('SELECT * FROM orders where orders.email = $1', [id]);
     res.json(ord.rows);
   } catch (err) {
@@ -202,9 +203,9 @@ app.delete('/order/:id', async (req, res) => {
   }
 });
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/build/index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'client/build/index.html'));
+// });
 
 app.listen(PORT, () => {
   console.log(`server has started on port ${PORT}`);

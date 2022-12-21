@@ -19,6 +19,7 @@ class OrderHistory extends React.Component {
   };
   submitHandler = (e) => {
     e.preventDefault();
+    console.log('submit called')
     this.getPizzas();
     this.getCustomers();
   };
@@ -26,9 +27,11 @@ class OrderHistory extends React.Component {
     let data = await axios
       .get(`/pizza/${this.state.email_para}`)
       .then(function (response) {
+        console.log(response);
         return response;
       })
       .catch(function (error) {
+        console.log('error pizza');
         console.log(error);
       });
 
@@ -38,9 +41,11 @@ class OrderHistory extends React.Component {
     let data = await axios
       .get(`/order/${this.state.email_para}`)
       .then(function (response) {
+        console.log(response);
         return response;
       })
       .catch(function (error) {
+        console.log('error order');
         console.log(error);
       });
     this.setState({ customers: data.data });
