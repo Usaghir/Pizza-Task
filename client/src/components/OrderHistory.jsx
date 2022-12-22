@@ -19,16 +19,19 @@ class OrderHistory extends React.Component {
   };
   submitHandler = (e) => {
     e.preventDefault();
+    console.log('submit called')
     this.getPizzas();
     this.getCustomers();
   };
   async getPizzas() {
     let data = await axios
-      .get(`/pizza/${this.state.email_para}`)
+      .get(`/api/pizza/${this.state.email_para}`)
       .then(function (response) {
+        console.log(response);
         return response;
       })
       .catch(function (error) {
+        console.log('error pizza');
         console.log(error);
       });
 
@@ -36,11 +39,13 @@ class OrderHistory extends React.Component {
   }
   async getCustomers() {
     let data = await axios
-      .get(`/order/${this.state.email_para}`)
+      .get(`/api/order/${this.state.email_para}`)
       .then(function (response) {
+        console.log(response);
         return response;
       })
       .catch(function (error) {
+        console.log('error order');
         console.log(error);
       });
     this.setState({ customers: data.data });

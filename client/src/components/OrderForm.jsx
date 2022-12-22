@@ -30,7 +30,7 @@ const SubmitForm = (Component) => {
     e.preventDefault();
 
     axios
-      .post('/order/', {
+      .post('/api/order/', {
         first_name: state.firstName,
         last_name: state.lastName,
         email: state.email,
