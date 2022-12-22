@@ -32,7 +32,7 @@ if (process.env.NODE_ENV === 'production') {
 
 //create an order
 
-app.post('/order', async (req, res) => {
+app.post('/api/order', async (req, res) => {
   try {
     const {
       first_name,
@@ -87,7 +87,7 @@ app.post('/order', async (req, res) => {
 
 //get email
 
-app.get('/form', async (req, res) => {
+app.get('/api/form', async (req, res) => {
   try {
     res.send('hello');
   } catch (err) {
@@ -95,7 +95,7 @@ app.get('/form', async (req, res) => {
   }
 });
 
-app.post('/send', async (req, res) => {
+app.post('/api/send', async (req, res) => {
   try {
     console.log(req.body);
     res.send('hello');
@@ -141,7 +141,7 @@ app.post('/send', async (req, res) => {
   }
 });
 // get all orders for admin in future use.
-app.get('/order', async (req, res) => {
+app.get('/api/order', async (req, res) => {
   try {
     const allOrd = await pool.query(
       'select * from orders join pizza on orders.order_id = pizza.order_id ',
@@ -153,7 +153,7 @@ app.get('/order', async (req, res) => {
 });
 
 // get customers
-app.get('/order/:id', async (req, res) => {
+app.get('/api/order/:id', async (req, res) => {
   try {
     const { id } = req.params;
     console.log(id);
@@ -165,7 +165,7 @@ app.get('/order/:id', async (req, res) => {
 });
 
 // get pizzas
-app.get('/pizza/:id', async (req, res) => {
+app.get('/api/pizza/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const ord = await pool.query(
@@ -178,7 +178,7 @@ app.get('/pizza/:id', async (req, res) => {
   }
 });
 // update an order fof future use.
-app.put('/order/:id', async (req, res) => {
+app.put('/api/order/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const { description } = req.body;
@@ -193,7 +193,7 @@ app.put('/order/:id', async (req, res) => {
 });
 
 // Delete an order for future use.
-app.delete('/order/:id', async (req, res) => {
+app.delete('/api/order/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const deleteOrd = await pool.query('DELETE FROM customer WHERE customer_id  = $1', [id]);

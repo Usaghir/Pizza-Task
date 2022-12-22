@@ -25,7 +25,7 @@ class OrderHistory extends React.Component {
   };
   async getPizzas() {
     let data = await axios
-      .get(`/pizza/${this.state.email_para}`)
+      .get(`/api/pizza/${this.state.email_para}`)
       .then(function (response) {
         console.log(response);
         return response;
@@ -39,7 +39,7 @@ class OrderHistory extends React.Component {
   }
   async getCustomers() {
     let data = await axios
-      .get(`/order/${this.state.email_para}`)
+      .get(`/api/order/${this.state.email_para}`)
       .then(function (response) {
         console.log(response);
         return response;
