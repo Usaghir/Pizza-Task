@@ -17,6 +17,6 @@ const proConfig = {
   connectionString: process.env.DATABASE_URL, // Heroku addon
 };
 
-const pool = new Pool(process.env.NODE_ENV === 'production' ? proConfig : devConfig);
+const pool = new Pool(process.env.NODE_ENV === 'production' ? devConfig : devConfig);
 
 module.exports = pool;
