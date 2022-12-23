@@ -1,12 +1,13 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const pool = require('./db');
+const pool = require('./db/db');
 const PORT = process.env.PORT || 5000;
 const path = require('path');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 //Middleware
 app.use(cors());
@@ -156,7 +157,7 @@ app.get('/api/order', async (req, res) => {
 app.get('/api/order/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    console.log(id);
+    console.log(typeof id);
     const ord = await pool.query('SELECT * FROM orders where orders.email = $1', [id]);
     res.json(ord.rows);
   } catch (err) {
@@ -168,6 +169,7 @@ app.get('/api/order/:id', async (req, res) => {
 app.get('/api/pizza/:id', async (req, res) => {
   try {
     const { id } = req.params;
+
     const ord = await pool.query(
       'SELECT * FROM orders join pizza on orders.email = $1 and orders.order_id = pizza.order_id',
       [id],
