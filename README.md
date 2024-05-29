@@ -2,88 +2,100 @@
 
 ## Introduction
 
-Topizza is a demo online pizza store application where the user can see some information regarding the online pizza shop and choose the pizzas. User can place pizzas in shopping cart to adjust the order by adding, subtracting or removing the order items and then user can see the cost of each pizza, total and additional cost of pizzas as well. User can place the order by filling the detail. User can see the history of the order by going to my order page when user placed the order need to provide just email address to see the history as invoice if the order is placed using that email.
+Topizza is a demo online pizza store application where users can explore the online pizza shop, choose pizzas, and manage their orders. Users can add pizzas to a shopping cart, adjust orders by adding, subtracting, or removing items, and view the cost breakdown, including total and additional costs. Users can place orders by filling in their details and can view their order history by providing their email address. This allows users to access their invoices for orders placed using that email.
 
 ## Requirements
 
-# Completed
+### Completed
 
-1. -[x] There should be at least some routing pages (Home, Menu, About, Contact, Order History, Cart, Order Form, Not Found).
-1. -[x] The Home page should contain summary information.
-1. -[x] The Menu page should contain some pizzas to choose with description.
-1. -[x] The About page should have some general company information.
-1. -[x] The Contact page should contact from for submitting the message to some email.
-1. -[x] The Card page should contain history of the places orders like payment receipt or invoices.
-1. -[x] The Order History page should have selected items and cost information regarding pizzas before placing order.
-1. -[x] The Order Form page should contain form to add the customer detail and cost need to pay to places the orders.
-1. -[x] Not Found page should be available in case user put wrong end-point in the url.
-1. -[x] A client should be able to put several pizzas into cart, and the quantity must be defined both while
-   inside the cart and outside the cart.
-1. -[x] Total price of each order must be calculated and shown in euros and in dollars.
-1. [x] There should be delivery and VAT costs in the final bill.
-1. -[X] Responsive design.
+1. **Routing Pages:**
+   - Home
+   - Menu
+   - About
+   - Contact
+   - Order History
+   - Cart
+   - Order Form
+   - Not Found
 
-# Pending
+2. **Home Page:** Contains summary information.
+3. **Menu Page:** Displays a selection of pizzas with descriptions.
+4. **About Page:** Provides general company information.
+5. **Contact Page:** Includes a form for submitting messages to an email address.
+6. **Order History Page:** Displays a history of placed orders, including payment receipts or invoices.
+7. **Cart Page:** Shows selected items and cost information before placing an order.
+8. **Order Form Page:** Contains a form for adding customer details and the cost needed to place orders.
+9. **Not Found Page:** Available in case the user enters a wrong URL endpoint.
+10. **Cart Management:** Users can add several pizzas to the cart and adjust quantities both inside and outside the cart.
+11. **Total Price Calculation:** Displays the total price of each order in euros and dollars.
+12. **Final Bill:** Includes delivery and VAT costs.
+13. **Responsive Design:** Ensures a good user experience on all devices.
 
-1. -[ ] User login system.
-1. -[ ] Payment gateway integration.
-1. -[ ] More items in the menu.
-1. -[ ] Dynamic Home page presentation items.
-1. -[ ] User input validation.
-1. -[ ] Dockerize the whole application.
+### Pending
 
-## Tools and technologies used
+1. User login system.
+2. Payment gateway integration.
+3. More items in the menu.
+4. Dynamic home page presentation items.
+5. User input validation.
+6. Dockerize the whole application.
 
-Visual Studio Code
-Terminal
-JavaScript
-React
-Boot Strap
-Context API
-Node JS
-Express
-PostgreSQL
-Axios
-Heroku
-NPM
-Git
+## Tools and Technologies Used
 
-## Main parts
+- Visual Studio Code
+- Terminal
+- JavaScript
+- React
+- Bootstrap
+- Context API
+- Node.js
+- Express
+- PostgreSQL
+- Axios
+- Heroku
+- NPM
+- Git
+
+## Main Parts
 
 Topizza consists of three main parts:
 
-Frontend (React, Context API)
-Backend (Node, Express)
-Database (Postgres)
+1. **Frontend:** React, Context API
+2. **Backend:** Node.js, Express
+3. **Database:** PostgreSQL
 
 ## Prerequisites
 
-Install Nodejs
-Install NPM
-Install React
-Install CLI
-Install Git
-Install Postgres
+- Install Node.js
+- Install NPM
+- Install React
+- Install CLI
+- Install Git
+- Install PostgreSQL
+
+## Setup Instructions
 
 It is necessary to set up and start these three components in the order below for everything to work.
 
-Starting the database
+### Starting the Database
 
-`$ psql -U postgres`
-`$ \c topizza`
+```bash
+$ psql -U postgres
+$ \c topizza
 
-Starting the backend server
-In application root folder.
+
+### Starting the Backend Server
+In the application root folder:
 
 `$ npm install`
-`$ nodomon index`
+`$ node index`
 
-Starting the frontend development server
-In client folder
+### Starting the Frontend Development Server
+In the client folder:
 
 `$ npm install`
 `$ npm start`
 
-# Link to the current version of application
+## Link to the Current Version of the Application
 
-[www.topizza.herokuapp.com](https://topizza.herokuapp.com)
+[Topizza](https://topizza-31e90.firebaseapp.com/)
