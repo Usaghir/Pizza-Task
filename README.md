@@ -90,16 +90,16 @@ $ \c topizza
 In the application root folder:
 
 ```bash
-`$ npm install`
-`$ node index`
+$ npm install
+$ node index
 ```
 
 ### Starting the Frontend Development Server
 In the client folder:
 
 ```bash
-`$ npm install`
-`$ npm start`
+$ npm install
+$ npm start
 ```
 
 ## Link to the Current Version of the Application
