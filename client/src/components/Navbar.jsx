@@ -1,87 +1,38 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { CartContext } from '../global/CartContext.jsx';
+import { Navbar, Nav, Container } from 'react-bootstrap';
+import { CartContext } from '../global/CartContext';
 import topizza from './topizza.png';
 import './Component.css';
 
-const Navbar = () => {
+const CustomNavbar = () => {
+  const [expanded, setExpanded] = useState(false);
   const { shoppingCart } = useContext(CartContext);
+
   return (
-    <nav className="navbar navbar-expand-lg mob-height sticky" style={{ background: '#474853' }}>
-      <ul className="container fle ">
-        <li>
-          <Link to="/" className=" ">
-            <img
-              className="navbar-brand abc border-primary"
-              src={topizza}
-              alt="#"
-              style={{ width: 150 }}
-            />
-          </Link>
-        </li>
-        <li>
-          <div>
-            <Link className="text-decoration-none" to="/">
-              <div>HOME</div>
-            </Link>
-          </div>
-        </li>
-        <li>
-          <div className="">
-            <Link className="text-decoration-none" to="/Menu">
-              <div>MENU</div>
-            </Link>
-          </div>
-        </li>
-        <li>
-          <div className="">
-            <Link className="text-decoration-none" to="/about">
-              <div>ABOUT</div>
-            </Link>
-          </div>
-        </li>
-        <li>
-          <div className="">
-            <Link className="text-decoration-none" to="/contact">
-              <div>CONTACT</div>
-            </Link>
-          </div>
-        </li>
-        <li>
-          <div className="">
-            <button className="btn font-bebas " style={{ width: '130px', background: '#318fb5' }}>
-              <Link className="text-decoration-none" to="/orderHistory">
-                <div className=" ">
-                  MY ORDER
-                  <span className="badge badge-sm mt-2"></span>
-                </div>
-              </Link>
-            </button>
-          </div>
-        </li>
-        <li>
-          <div className=" ">
-            {shoppingCart.length ? (
-              <button
-                className="btn btn-primary font-bebas "
-                style={{ width: '130px', background: '#318fb5' }}
-              >
-                <Link className="text-decoration-none" to="/cart">
-                  <i className="fas fa-cart-plus">
-                    <span className="badge badge-light badge-sm mt-2">
-                      {shoppingCart ? shoppingCart.length : 0}
-                    </span>
-                  </i>
-                </Link>
-              </button>
-            ) : (
-              ''
+    <Navbar expanded={expanded} onToggle={() => setExpanded(!expanded)} bg="dark" variant="dark" expand="lg" fixed="top">
+      <Container>
+        <Navbar.Brand as={Link} to="/">
+          <img src={topizza} alt="Topizza Logo" className="navbar-logo" />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ml-auto">
+            <Nav.Link as={Link} to="/" onClick={() => setExpanded(false)}>HOME</Nav.Link>
+            <Nav.Link as={Link} to="/menu" onClick={() => setExpanded(false)}>MENU</Nav.Link>
+            <Nav.Link as={Link} to="/about" onClick={() => setExpanded(false)}>ABOUT</Nav.Link>
+            <Nav.Link as={Link} to="/contact" onClick={() => setExpanded(false)}>CONTACT</Nav.Link>
+            <Nav.Link as={Link} to="/orderHistory" className="btn btn-outline-light" onClick={() => setExpanded(false)}>MY ORDER</Nav.Link>
+            {shoppingCart.length > 0 && (
+              <Nav.Link as={Link} to="/cart" className="btn btn-info" onClick={() => setExpanded(false)}>
+                CART <span className="badge badge-light">{shoppingCart.length}</span>
+              </Nav.Link>
             )}
-          </div>
-        </li>
-      </ul>
-    </nav>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 
-export default Navbar;
+export default CustomNavbar;

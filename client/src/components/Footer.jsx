@@ -1,39 +1,41 @@
-import React, { Component } from 'react';
+import React from 'react';
+import './Component.css';
 
-class Footer extends Component {
-  render() {
-    let year = new Date().getFullYear();
-    return (
-      <nav style={{ background: '#318fb5', height: 200 }}>
-        <ul className="contact-items row d-flex justify-content-center pt-5 mb-0">
-          <li>
-            <div className="mr-3">
+const Footer = () => {
+  const year = new Date().getFullYear();
+  return (
+    <div className="footer mb-0">
+      <div className="container">
+        <div className="row d-flex justify-content-center social-icons">
+          <div className="col-auto">
+            <a href="mailto:info@topizza.com" className="text-white mr-3">
               <i className="fas fa-envelope"></i>
-            </div>
-          </li>
-          <li>
-            <div className="mr-3">
+            </a>
+          </div>
+          <div className="col-auto">
+            <a href="https://www.linkedin.com" className="text-white mr-3">
               <i className="fab fa-linkedin"></i>
-            </div>
-          </li>
-          <li>
-            <div className="mr-3">
+            </a>
+          </div>
+          <div className="col-auto">
+            <a href="https://www.facebook.com" className="text-white mr-3">
               <i className="fab fa-facebook-square"></i>
-            </div>
-          </li>
-          <li>
-            <div>
+            </a>
+          </div>
+          <div className="col-auto">
+            <a href="https://www.instagram.com" className="text-white">
               <i className="fab fa-instagram-square"></i>
-            </div>
-          </li>
-        </ul>
-
-        <div className="contact-items row d-flex justify-content-center">
-          Copyright © {year}, All right reserved by Topizza
+            </a>
+          </div>
         </div>
-      </nav>
-    );
-  }
-}
+        <div className="row d-flex justify-content-center">
+          <div className="col-auto">
+            <p className="mb-0">© {year} Topizza. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Footer;
