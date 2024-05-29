@@ -39,6 +39,7 @@ Topizza is a demo online pizza store application where users can explore the onl
 4. Dynamic home page presentation items.
 5. User input validation.
 6. Dockerize the whole application.
+7. Testing.
 
 ## Tools and Technologies Used
 
@@ -47,6 +48,7 @@ Topizza is a demo online pizza store application where users can explore the onl
 - JavaScript
 - React
 - Bootstrap
+- Redux
 - Context API
 - Node.js
 - Express
@@ -60,7 +62,7 @@ Topizza is a demo online pizza store application where users can explore the onl
 
 Topizza consists of three main parts:
 
-1. **Frontend:** React, Context API
+1. **Frontend:** React, Context API, Redux
 2. **Backend:** Node.js, Express
 3. **Database:** PostgreSQL
 
@@ -82,20 +84,29 @@ It is necessary to set up and start these three components in the order below fo
 ```bash
 $ psql -U postgres
 $ \c topizza
-
+```
 
 ### Starting the Backend Server
 In the application root folder:
 
+```bash
 `$ npm install`
 `$ node index`
+```
 
 ### Starting the Frontend Development Server
 In the client folder:
 
+```bash
 `$ npm install`
 `$ npm start`
+```
 
 ## Link to the Current Version of the Application
 
 [Topizza](https://topizza-31e90.firebaseapp.com/)
+
+## Current Version: v1.0.0
+
+
+
