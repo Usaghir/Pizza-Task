@@ -1,0 +1,43 @@
+body {
+  background-color: #f4f4f4;
+}
+
+.contact-container {
+  margin-top: 100px; /* Adjust this value as needed */
+  margin-bottom: 50px; /* Add some margin at the bottom */
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+}
+
+.card-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2rem;
+  color: #333;
+}
+
+.form-control {
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.alert-success {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+}
+.sub-btn-col{
+  background: #0fcaf0 !important;
+}

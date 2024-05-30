@@ -1,40 +1,29 @@
 import React from 'react';
-import './Component.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
-    <div className="footer mb-0">
-      <div className="container">
-        <div className="row d-flex justify-content-center social-icons">
-          <div className="col-auto">
-            <a href="mailto:info@topizza.com" className="text-white mr-3">
-              <i className="fas fa-envelope"></i>
-            </a>
-          </div>
-          <div className="col-auto">
-            <a href="https://www.linkedin.com" className="text-white mr-3">
-              <i className="fab fa-linkedin"></i>
-            </a>
-          </div>
-          <div className="col-auto">
-            <a href="https://www.facebook.com" className="text-white mr-3">
-              <i className="fab fa-facebook-square"></i>
-            </a>
-          </div>
-          <div className="col-auto">
-            <a href="https://www.instagram.com" className="text-white">
-              <i className="fab fa-instagram-square"></i>
-            </a>
-          </div>
-        </div>
-        <div className="row d-flex justify-content-center">
-          <div className="col-auto">
-            <p className="mb-0">© {year} Topizza. All rights reserved.</p>
-          </div>
-        </div>
-      </div>
+    <footer className="bg-danger text-white py-4">
+  <div className="container text-center">
+    <div className="">
+      <a href="mailto:info@topizza.com" className="text-white mx-3" target="_blank" rel="noopener noreferrer">
+        <i className="fas fa-envelope fa-2x"></i>
+      </a>
+      <a href="https://www.linkedin.com" className="text-white mx-3" target="_blank" rel="noopener noreferrer">
+        <i className="fab fa-linkedin fa-2x"></i>
+      </a>
+      <a href="https://www.facebook.com" className="text-white mx-3" target="_blank" rel="noopener noreferrer">
+        <i className="fab fa-facebook-square fa-2x"></i>
+      </a>
+      <a href="https://www.instagram.com" className="text-white mx-3" target="_blank" rel="noopener noreferrer">
+        <i className="fab fa-instagram-square fa-2x"></i>
+      </a>
     </div>
+    <p className="mb-0 py-3">© {new Date().getFullYear()} Topizza. All rights reserved.</p>
+  </div>
+</footer>
+
   );
 };
 

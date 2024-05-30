@@ -1,9 +1,10 @@
 import React, { useContext, useState } from 'react';
-import { CartContext } from '../global/CartContext.jsx';
-
 import axios from 'axios';
+import { CartContext } from '../global/CartContext.jsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './OrderForm.css';
 
-const SubmitForm = (Component) => {
+const OrderForm = () => {
   const { shoppingCart, totalPrice, qty } = useContext(CartContext);
 
   const [state, setState] = useState({
@@ -15,10 +16,6 @@ const SubmitForm = (Component) => {
     city: '',
     postcode: '',
     other: '',
-    shoppingCartInfo: shoppingCart,
-    total: totalPrice,
-    totalQty: qty,
-    date: new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate(),
     submitMessage: false,
   });
 
@@ -39,11 +36,10 @@ const SubmitForm = (Component) => {
         city: state.city,
         post_code: state.postcode,
         other_info: state.other,
-        orders_info: state.shoppingCartInfo,
+        orders_info: shoppingCart,
         total_price: totalPrice,
         total_qty: qty,
-        order_date:
-          new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate(),
+        order_date: new Date().toISOString().split('T')[0],
       })
       .then((res) => {
         setState({
@@ -56,7 +52,6 @@ const SubmitForm = (Component) => {
           city: '',
           postcode: '',
           other: '',
-          total: 0,
         });
       })
       .catch((err) => {
@@ -65,148 +60,149 @@ const SubmitForm = (Component) => {
   };
 
   return (
-    <div style={{ backgroundColor: '#F7FFF7' }}>
-      <div className="container w-50 " id="contact">
-        <h1 className="  font-weight-bold pt-5">Enter Detail</h1>
-        <div className="mb-5"></div>
-        <form className="" style={{ background: '#F7FFF7' }} onSubmit={submitHandler}>
-          <div className="form-row " style={{ background: '#F7FFF7' }}>
-            <div className="form-group  col-md-6">
-              <input
-                type="text"
-                className="form-control  border-0 pl-3"
-                style={{ backgroundColor: '#474853', color: '#f7ffff', boxSizing: 'border-box' }}
-                id="inputEmail4"
-                placeholder="First Name"
-                value={state.firstName}
-                onChange={changeHandler}
-                name="firstName"
-                required
-              ></input>
-            </div>
-            <div className="form-group col-md-6">
-              <input
-                type="text"
-                className="form-control  border-0 pl-3"
-                style={{ background: '#474853', color: '#f7ffff', boxSizing: 'border-box' }}
-                id="inputEmail4"
-                placeholder="Last Name"
-                value={state.lastName}
-                onChange={changeHandler}
-                name="lastName"
-                required
-              ></input>
-            </div>
-            <div className="form-group col-md-6">
-              <input
-                type="text"
-                className="form-control  border-0 pl-3 "
-                style={{ background: '#474853', color: '#f7ffff', boxSizing: 'border-box' }}
-                id="inputEmail4"
-                placeholder="Email"
-                value={state.email}
-                onChange={changeHandler}
-                name="email"
-                required
-              ></input>
-            </div>
-            <div className="form-group col-md-6">
-              <input
-                type="text"
-                className="form-control  border-0 pl-3 "
-                style={{ background: '#474853', color: '#f7ffff', boxSizing: 'border-box' }}
-                id="inputEmail4"
-                placeholder="Phone"
-                value={state.phoneNumber}
-                onChange={changeHandler}
-                name="phoneNumber"
-              ></input>
-            </div>
-            <div className="form-group col-md-6">
-              <input
-                type="text"
-                className="form-control  border-0 pl-3 "
-                style={{ background: '#474853', color: '#f7ffff', boxSizing: 'border-box' }}
-                id="inputEmail4"
-                placeholder="City"
-                value={state.city}
-                onChange={changeHandler}
-                name="city"
-                required
-              ></input>
-            </div>
-
-            <div className="form-group col-md-6">
-              <input
-                type="text"
-                className="form-control  border-0 pl-3 "
-                style={{ background: '#474853', color: '#f7ffff', boxSizing: 'border-box' }}
-                id="inputEmail4"
-                placeholder="Post Code"
-                value={state.postcode}
-                onChange={changeHandler}
-                name="postcode"
-                required
-              ></input>
-            </div>
-
-            <div className="form-group col-md-6 ">
-              <input
-                type="text"
-                className="form-control  border-0 pl-3 "
-                style={{ background: '#474853', color: '#f7ffff', boxSizing: 'border-box' }}
-                id="inputEmail4"
-                placeholder="Address"
-                value={state.address}
-                onChange={changeHandler}
-                name="address"
-                required
-              ></input>
-            </div>
-            <div className="form-group col-md-6 ">
-              <input
-                type="text"
-                className="form-control  border-0 pl-3 text-light"
-                style={{ background: '#474853', boxSizing: 'border-box' }}
-                value={(1.375 * totalPrice).toFixed(2) + ' €'}
-                name="price"
-                readOnly
-              ></input>
-            </div>
-            <div className="form-group col ">
-              <input
-                type="text"
-                className="form-control  border-0 pl-3 "
-                style={{ background: '#474853', color: '#f7ffff', boxSizing: 'border-box' }}
-                id="inputEmail4"
-                placeholder="Note for the delivery"
-                value={state.other}
-                onChange={changeHandler}
-                name="other"
-              ></input>
+    <div className="container py-5 my-5 orderform-container">
+      <div className="row justify-content-center">
+        <div className="col-md-10 col-lg-8">
+          <div className="card shadow-lg p-4">
+            <div className="card-body">
+              <h1 className="card-title text-center mb-4">Order Form</h1>
+              <form onSubmit={submitHandler}>
+                <div className="form-row">
+                  <div className="form-group col-md-6">
+                    <label htmlFor="firstName">First Name</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="firstName"
+                      placeholder="First Name"
+                      value={state.firstName}
+                      onChange={changeHandler}
+                      name="firstName"
+                      required
+                    />
+                  </div>
+                  <div className="form-group col-md-6">
+                    <label htmlFor="lastName">Last Name</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="lastName"
+                      placeholder="Last Name"
+                      value={state.lastName}
+                      onChange={changeHandler}
+                      name="lastName"
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="form-row">
+                  <div className="form-group col-md-6">
+                    <label htmlFor="email">Email</label>
+                    <input
+                      type="email"
+                      className="form-control  text-white"
+                      id="email"
+                      placeholder="Email"
+                      value={state.email}
+                      onChange={changeHandler}
+                      name="email"
+                      required
+                    />
+                  </div>
+                  <div className="form-group col-md-6">
+                    <label htmlFor="phoneNumber">Phone</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="phoneNumber"
+                      placeholder="Phone"
+                      value={state.phoneNumber}
+                      onChange={changeHandler}
+                      name="phoneNumber"
+                    />
+                  </div>
+                </div>
+                <div className="form-row">
+                  <div className="form-group col-md-6">
+                    <label htmlFor="city">City</label>
+                    <input
+                      type="text"
+                      className="form-control "
+                      id="city"
+                      placeholder="City"
+                      value={state.city}
+                      onChange={changeHandler}
+                      name="city"
+                      required
+                    />
+                  </div>
+                  <div className="form-group col-md-6">
+                    <label htmlFor="postcode">Post Code</label>
+                    <input
+                      type="text"
+                      className="form-control "
+                      id="postcode"
+                      placeholder="Post Code"
+                      value={state.postcode}
+                      onChange={changeHandler}
+                      name="postcode"
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="form-row">
+                  <div className="form-group col-md-6">
+                    <label htmlFor="address">Address</label>
+                    <input
+                      type="text"
+                      className="form-control "
+                      id="address"
+                      placeholder="Address"
+                      value={state.address}
+                      onChange={changeHandler}
+                      name="address"
+                      required
+                    />
+                  </div>
+                  <div className="form-group col-md-6">
+                    <label htmlFor="price">Price</label>
+                    <input
+                      type="text"
+                      className="form-control "
+                      id="price"
+                      value={`${(1.375 * totalPrice).toFixed(2)} €`}
+                      name="price"
+                      readOnly
+                    />
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="other">Note for the delivery</label>
+                  <input
+                    type="text"
+                    className="form-control "
+                    id="other"
+                    placeholder="Note for the delivery"
+                    value={state.other}
+                    onChange={changeHandler}
+                    name="other"
+                  />
+                </div>
+                {state.submitMessage && (
+                  <div className="alert alert-success mt-3">
+                    Thanks for placing the order and soon you will get your order.
+                  </div>
+                )}
+                <button type="submit" className="btn ord-btn btn-block mt-4">
+                  Submit
+                </button>
+              </form>
             </div>
           </div>
-          {state.submitMessage ? (
-            <div className="form-group ">
-              <div
-                className="form-control  border-0 pl-3 "
-                style={{ background: '#86b3d1', boxSizing: 'border-box' }}
-              >
-                Thanks for placing the order and soon you will get your order.
-              </div>
-            </div>
-          ) : (
-            ''
-          )}
-          <div className="form-group">
-            <button type="submit" className="btn  w-25 mb-2 " style={{ background: '#318fb5' }}>
-              Submit
-            </button>
-          </div>
-        </form>
+        </div>
       </div>
     </div>
   );
 };
 
-export default SubmitForm;
+export default OrderForm;

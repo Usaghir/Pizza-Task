@@ -1,0 +1,48 @@
+.home-container {
+  background-color: #ffeadb;
+}
+
+.font-handwriting {
+  font-family: 'Pacifico', cursive;
+  font-size: 24px;
+}
+
+.pizza-slice {
+  border-radius: 10px;
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.pizza-slice:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 24px;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.btn-warning {
+  background-color: #ffd600;
+  color: #3e2723;
+  border: none;
+}
+
+.btn-warning:hover {
+  background-color: #e6c200;
+  color: #3e2723;
+}
+
+.ord-btn-color {
+  background-color: #0fcaf0 !important;
+}
+
+@media (max-width: 768px) {
+  .pizza-slice {
+    transform: rotate(0deg); /* Remove rotation for smaller screens */
+  }
+}

@@ -1,0 +1,45 @@
+.orderform-container {
+  background-color: #ffeadb; /* Matching background color */
+  border-radius: 8px; /* Rounded corners for the form */
+}
+
+.card {
+  border-radius: 8px; /* Rounded corners for the card */
+  background: #fff; /* White background for contrast */
+}
+
+.form-control {
+  margin-bottom: 1rem; /* Space between form controls */
+}
+
+.form-control::placeholder {
+  color: #e0e0e0; /* Light color for placeholder text */
+}
+
+.btn-primary {
+  background-color: #318fb5; /* Primary button color */
+  border-color: #318fb5; /* Match border color to background */
+}
+
+.btn-primary:hover {
+  background-color: #276b8f; /* Darker shade for hover effect */
+  border-color: #276b8f; /* Match border color to background */
+}
+
+.bg-dark {
+  background-color: #474853 !important; /* Ensure dark background is visible */
+}
+
+.text-white {
+  color: #fff !important; /* Ensure text is white */
+}
+
+.alert-success {
+  background-color: #86b3d1; /* Custom success alert color */
+  border: none; /* Remove border from success alert */
+  color: #fff; /* White text for contrast */
+}
+
+.ord-btn {
+  background-color: #0fcaf0 !important; /* Custom order button color */
+}

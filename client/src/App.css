@@ -1,3 +1,42 @@
+html, body {
+  height: 100%;
+  margin: 0;
+
+  background-color: #ffeadb;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .main-content {
-    flex: 1;
-  }
+  flex: 1;
+}
+
+.footer {
+  background: #2d2d2d;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer a {
+  color: #ffd700;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer a:hover {
+  color: #ff4500;
+}
+
+.footer .social-icons a {
+  margin: 0 10px;
+}
+
+.footer .social-icons i {
+  font-size: 1.5rem;
+}

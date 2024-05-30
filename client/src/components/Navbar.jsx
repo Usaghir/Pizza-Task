@@ -1,37 +1,97 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container } from 'react-bootstrap';
 import { CartContext } from '../global/CartContext';
-import topizza from './topizza.png';
-import './Component.css';
+import topizza from './logo.png';
+import './NavBar.css';
 
 const CustomNavbar = () => {
   const [expanded, setExpanded] = useState(false);
   const { shoppingCart } = useContext(CartContext);
 
+  const handleToggle = () => {
+    setExpanded(!expanded);
+  };
+
+  const closeMenu = () => {
+    setExpanded(false);
+  };
+
   return (
-    <Navbar expanded={expanded} onToggle={() => setExpanded(!expanded)} bg="dark" variant="dark" expand="lg" fixed="top">
-      <Container>
-        <Navbar.Brand as={Link} to="/">
-          <img src={topizza} alt="Topizza Logo" className="navbar-logo" />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto">
-            <Nav.Link as={Link} to="/" onClick={() => setExpanded(false)}>HOME</Nav.Link>
-            <Nav.Link as={Link} to="/menu" onClick={() => setExpanded(false)}>MENU</Nav.Link>
-            <Nav.Link as={Link} to="/about" onClick={() => setExpanded(false)}>ABOUT</Nav.Link>
-            <Nav.Link as={Link} to="/contact" onClick={() => setExpanded(false)}>CONTACT</Nav.Link>
-            <Nav.Link as={Link} to="/orderHistory" className="btn btn-outline-light" onClick={() => setExpanded(false)}>MY ORDER</Nav.Link>
+    <nav className='navbar navbar-expand-lg navbar-light bg-danger fixed-top shadow-sm'>
+      <div className='container  mt-2'>
+        <Link className='navbar-brand' to='/'>
+          <img
+            src={topizza}
+            alt='Topizza Logo'
+            className='navbar-logo mb-4'
+            style={{ width: '50px' }}
+          />
+        </Link>
+        <button
+          className={`navbar-toggler ${expanded ? '' : 'collapsed'}`}
+          type='button'
+          onClick={handleToggle}
+          aria-controls='navbarNav'
+          aria-expanded={expanded ? 'true' : 'false'}
+          aria-label='Toggle navigation'
+        >
+          <span className='navbar-toggler-icon'></span>
+        </button>
+        <div
+          className={`collapse navbar-collapse ${expanded ? 'show' : ''}`}
+          id='navbarNav'
+        >
+          <ul className='navbar-nav ml-auto'>
+            <li className='nav-item'>
+              <Link className='nav-link text-light' to='/' onClick={closeMenu}>
+                HOME
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link
+                className='nav-link text-light'
+                to='/menu'
+                onClick={closeMenu}
+              >
+                MENU
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link
+                className='nav-link text-light'
+                to='/contact'
+                onClick={closeMenu}
+              >
+                CONTACT
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link
+                className=' btn bg-info mt-4 text-light'
+                to='/orderHistory'
+                onClick={closeMenu}
+              >
+                MY ORDER
+              </Link>
+            </li>
             {shoppingCart.length > 0 && (
-              <Nav.Link as={Link} to="/cart" className="btn btn-info" onClick={() => setExpanded(false)}>
-                CART <span className="badge badge-light">{shoppingCart.length}</span>
-              </Nav.Link>
+              <li className='nav-item position-relative mt-1'>
+                <Link
+                  className='nav-link text-light position-relative'
+                  to='/cart'
+                  onClick={closeMenu}
+                >
+                  <i className='fas fa-shopping-cart'></i>
+                  <span className='badge badge-light position-absolute'>
+                    {shoppingCart.length}
+                  </span>
+                </Link>
+              </li>
             )}
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+          </ul>
+        </div>
+      </div>
+    </nav>
   );
 };
 
