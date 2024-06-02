@@ -100,7 +100,7 @@ const OrderForm = () => {
                     <label htmlFor="email">Email</label>
                     <input
                       type="email"
-                      className="form-control  text-white"
+                      className="form-control"
                       id="email"
                       placeholder="Email"
                       value={state.email}
