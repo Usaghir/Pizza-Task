@@ -20,7 +20,7 @@ const Footer = () => {
         <i className="fab fa-instagram-square fa-2x"></i>
       </a>
     </div>
-    <p className="mb-0 py-3">© {new Date().getFullYear()} Topizza. All rights reserved.</p>
+    <p className="mb-0 py-3">© {year} Topizza. All rights reserved.</p>
   </div>
 </footer>
 

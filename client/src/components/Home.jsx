@@ -6,8 +6,8 @@ import './Home.css';
 
 function Home() {
   return (
-    <div className="home-container mt-5 pt-5 mb-5 pb-5">
-      <div className="container pt-5 mt-5">
+    <div className="home-container mt-5 pt-5  pb-5">
+      <div className="container mt-5 ">
         <div className="row justify-content-center">
           <div className="col-md-6">
             <div className="card pizza-slice text-white bg-danger mb-4">
@@ -20,8 +20,8 @@ function Home() {
                 }}
               >
                 <h5 className="font-handwriting  text-danger">FRESH INGREDIENTS</h5>
-                <h3>TASTY & CRUSTY</h3>
-                <p className="font-weight-bold   text-white">Ready to serve hot at your doorstep.</p>
+                <h3 className='text-transparent'>TASTY & CRUSTY</h3>
+                <p className="font-weight-bold   text-transparent">Ready to serve hot at your doorstep.</p>
                 <Link to="/Menu">
                   <button className="btn ord-btn-color">Order Now</button>
                 </Link>

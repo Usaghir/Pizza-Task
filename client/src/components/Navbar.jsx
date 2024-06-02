@@ -18,7 +18,7 @@ const CustomNavbar = () => {
 
   return (
     <nav className='navbar navbar-expand-lg navbar-light bg-danger fixed-top shadow-sm'>
-      <div className='container  mt-2'>
+      <div className='container  margin-top'>
         <Link className='navbar-brand' to='/'>
           <img
             src={topizza}

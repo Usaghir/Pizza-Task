@@ -90,3 +90,9 @@
     background-color: #dc3545;
   }
 }
+
+@media (min-width: 768px) {
+  .margin-top {
+    margin-top: 20px !important;
+  }
+}

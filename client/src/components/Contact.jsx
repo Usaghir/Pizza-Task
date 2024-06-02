@@ -46,9 +46,9 @@ function Contact() {
     <div className="container py-5 my-5 contact-container">
       <div className="row justify-content-center">
         <div className="col-md-10 col-lg-8">
-          <div className="card shadow-lg p-4 m-5">
+          <div className="card shadow-lg py-4 my-5">
             <div className="card-body">
-              <h1 className="card-title text-center mb-4">Contact Us</h1>
+              <h2 className=" text-center mb-4 pb-4">Contact Us</h2>
               <form onSubmit={submitHandler}>
                 <div className="form-row">
                   <div className="form-group col-md-6">

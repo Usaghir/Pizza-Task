@@ -13,15 +13,15 @@ const Cart = () => {
         {shoppingCart.length > 0 ? (
           shoppingCart.map((product) => (
             <li className="list-group-item d-flex align-items-center justify-content-between p-5 flex-wrap" key={product.id}>
-              <img className="mr-3 rounded" width="150" src={product.image} alt="not found" />
-              <span className="mr-3 product-name font-bebas text-danger">{product.name}</span>
-              <span className="mr-3">${(1 * product.price).toFixed(2)}</span>
-              <div className="d-flex align-items-center">
-                <button className="btn btn-sm plus-min-btns mr-3" onClick={() => dispatch({ type: 'DEC', id: product.id })}>
+              <img className=" mb-3 rounded" width="150" src={product.image} alt="not found" />
+              <span className=" product-name font-bebas text-danger">{product.name}</span>
+              <span className="">${(1 * product.price).toFixed(2)}</span>
+              <div className="d-flex align-items-center m-2">
+                <button className="btn btn-sm plus-min-btns" onClick={() => dispatch({ type: 'DEC', id: product.id })}>
                   <i className="fas fa-minus"></i>
                 </button>
-                <span className="mr-3">{product.qty}</span>
-                <button className="btn btn-sm plus-min-btns mr-3" onClick={() => dispatch({ type: 'INC', id: product.id })}>
+                <span className="mx-2">{product.qty}</span>
+                <button className="btn btn-sm plus-min-btns" onClick={() => dispatch({ type: 'INC', id: product.id })}>
                   <i className="fas fa-plus"></i>
                 </button>
               </div>
@@ -69,7 +69,7 @@ const Cart = () => {
             </li>
             <li className="list-group-item bg-light text-center">
               <Link to="/orderForm">
-                <button className="btn app-btns font-bebas mb-5">Click to Order</button>
+                <button className="btn app-btns font-bebas mt-4 mb-5">Click to Order</button>
               </Link>
             </li>
           </ul>
