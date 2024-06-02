@@ -1,40 +1,40 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import CustomNavbar from './components/Navbar';
-import OrderHistory from './components/OrderHistory';
-import ProductContextProvider from './global/ProductContext';
-import CartContextProvider from './global/CartContext';
-import Menu from './components/Menu';
-import Cart from './components/Cart';
-import NotFound from './components/NotFound';
-import OrderForm from './components/OrderForm';
-import Footer from './components/Footer';
-import Home from './components/Home';
-import About from './components/About';
-import Contact from './components/Contact';
-import './components/Component.css'; // Import your CSS file
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import CustomNavbar from './components/Navbar.jsx';
+import OrderHistory from './components/OrderHistory.jsx';
+import ProductContextProvider from './global/ProductContext.jsx';
+import CartContextProvider from './global/CartContext.jsx';
+import Menu from './components/Menu.jsx';
+import Cart from './components/Cart.jsx';
+import NotFound from './components/NotFound.jsx';
+import OrderForm from './components/OrderForm.jsx';
+import Footer from './components/Footer.jsx';
+import Home from './components/Home.jsx';
+//import About from './components/About.jsx';
+import Contact from './components/Contact.jsx';
+import './App.css';
 
 function App() {
   return (
-    <div className="app">
+    <div className="App">
       <ProductContextProvider>
         <CartContextProvider>
-          <Router>
+          <BrowserRouter>
             <CustomNavbar />
-            <div className="content">
+            <div className="main-content">
               <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/menu" element={<Menu />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/orderForm" element={<OrderForm />} />
-                <Route path="/orderHistory" element={<OrderHistory />} />
-                <Route path="*" element={<NotFound />} />
+                <Route exact path="/" element={<Home />} />
+                <Route path="/menu" exact element={<Menu />} />
+                {/* <Route path="/about" exact element={<About />} /> */}
+                <Route path="/contact" exact element={<Contact />} />
+                <Route path="/cart" exact element={<Cart />} />
+                <Route path="/orderForm" exact element={<OrderForm />} />
+                <Route path="/orderHistory" exact element={<OrderHistory />} />
+                <Route element={<NotFound />} />
               </Routes>
             </div>
             <Footer />
-          </Router>
+          </BrowserRouter>
         </CartContextProvider>
       </ProductContextProvider>
     </div>

@@ -64,7 +64,7 @@ app.post('/api/order', async (req, res) => {
         total_price,
         total_qty,
         order_date,
-      ],
+      ]
     );
 
     const orders = await orders_info.map((order) => {
@@ -77,10 +77,12 @@ app.post('/api/order', async (req, res) => {
           order.description,
           order.qty,
           customers.rows[0].order_id,
-        ],
+        ]
       );
     });
-    res.status(200).json({ status: 'success', data: { cus: customers, ord: orders } });
+    res
+      .status(200)
+      .json({ status: 'success', data: { cus: customers, ord: orders } });
   } catch (err) {
     console.error(err.message);
   }
@@ -99,6 +101,7 @@ app.get('/api/form', async (req, res) => {
 app.post('/api/send', async (req, res) => {
   try {
     console.log(req.body);
+    console.log('req.body');
     res.send('hello');
 
     const sentData = `   <p>You have a new contact request</p>
@@ -113,19 +116,19 @@ app.post('/api/send', async (req, res) => {
   <p>${req.body.message}</p>`;
     // create reusable transporter object using the default SMTP transport
     let transporter = await nodemailer.createTransport({
-      host: 'send.one.com',
-      port: 587,
+      host: 'mail.privateemail.com',
+      port: 465,
       secure: false, // true for 465, false for other ports
       auth: {
-        user: 'contact@rajaumersaghir.com', // generated ethereal user
-        pass: '#abfr101@', // generated ethereal password
+        user: 'process.env.EMAIL_USER', // generated ethereal user
+        pass: 'process.env.EMAIL_PASS', // generated ethereal password
       },
     });
 
     // send mail with defined transport object
     let info = await transporter.sendMail({
-      from: '`Email from Topizza account` <contact@rajaumersaghir.com>', // sender address
-      to: 'umer.saghir@live.com', // list of receivers
+      from: `Email from Topizza <${process.env.EMAIL_USER}>`, // sender address
+      to: `${process.env.EMAIL_USER}`, // list of receivers
       subject: 'Hello', // Subject line
       text: 'Hello world?', // plain text body
       html: `<b>${sentData}</b>`, // html body
@@ -145,7 +148,7 @@ app.post('/api/send', async (req, res) => {
 app.get('/api/order', async (req, res) => {
   try {
     const allOrd = await pool.query(
-      'select * from orders join pizza on orders.order_id = pizza.order_id ',
+      'select * from orders join pizza on orders.order_id = pizza.order_id '
     );
     res.json(allOrd.rows);
   } catch (err) {
@@ -158,7 +161,10 @@ app.get('/api/order/:id', async (req, res) => {
   try {
     const { id } = req.params;
     console.log(typeof id);
-    const ord = await pool.query('SELECT * FROM orders where orders.email = $1', [id]);
+    const ord = await pool.query(
+      'SELECT * FROM orders where orders.email = $1',
+      [id]
+    );
     res.json(ord.rows);
   } catch (err) {
     console.error(err.message);
@@ -172,7 +178,7 @@ app.get('/api/pizza/:id', async (req, res) => {
 
     const ord = await pool.query(
       'SELECT * FROM orders join pizza on orders.email = $1 and orders.order_id = pizza.order_id',
-      [id],
+      [id]
     );
     res.json(ord.rows);
   } catch (err) {
@@ -186,7 +192,7 @@ app.put('/api/order/:id', async (req, res) => {
     const { description } = req.body;
     const updateOrd = await pool.query(
       'UPDATE customer SET description  = $1 WHERE customer_id = $2',
-      [description, id],
+      [description, id]
     );
     res.json('order was updated');
   } catch (err) {
@@ -198,7 +204,10 @@ app.put('/api/order/:id', async (req, res) => {
 app.delete('/api/order/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const deleteOrd = await pool.query('DELETE FROM customer WHERE customer_id  = $1', [id]);
+    const deleteOrd = await pool.query(
+      'DELETE FROM customer WHERE customer_id  = $1',
+      [id]
+    );
     res.json('order was deleted');
   } catch (err) {
     console.error(err.message);
