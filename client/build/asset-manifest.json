@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/static/css/main.31423341.css",
+    "main.js": "/static/js/main.ba9fd321.js",
+    "static/media/Mini.jpg": "/static/media/Mini.9a2fd046f32e54cca5b0.jpg",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/Mixed Meat.jpeg": "/static/media/Mixed Meat.44ae68d25f62e394610c.jpeg",
+    "static/media/Mixed.jpeg": "/static/media/Mixed.b6781535bc762b3432fa.jpeg",
+    "static/media/Tomato.jpeg": "/static/media/Tomato.9c1531a01b2e22a1eaa1.jpeg",
+    "static/media/Shrimps.jpeg": "/static/media/Shrimps.8118b1b73dba396e694c.jpeg",
+    "static/media/Green.jpeg": "/static/media/Green.511495e52cf210892450.jpeg",
+    "static/media/Mince.jpeg": "/static/media/Mince.330bf416801c51bb53db.jpeg",
+    "static/media/Spinach.jpeg": "/static/media/Spinach.91e058305c524ab70be3.jpeg",
+    "static/media/Chilli.jpeg": "/static/media/Chilli.e6f3a0ec725e1355d6fc.jpeg",
+    "static/media/Mixed Vegi.jpeg": "/static/media/Mixed Vegi.829ac64411c333267129.jpeg",
+    "static/media/Smoked.jpeg": "/static/media/Smoked.8c455c26e04ffde6953b.jpeg",
+    "static/media/Mix Egg.jpeg": "/static/media/Mix Egg.8def1cfdd5ba560cd4c8.jpeg",
+    "static/media/Pepperoni Cheese.jpeg": "/static/media/Pepperoni Cheese.b1a4668ac9bfcc019bc0.jpeg",
+    "static/media/Egg.jpeg": "/static/media/Egg.bf13c6b83f4754845592.jpeg",
+    "static/media/Mini Cheese.jpeg": "/static/media/Mini Cheese.7eb7d9609955b9abe04e.jpeg",
+    "static/media/fontawesome-webfont.eot": "/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/HomeMain.jpg": "/static/media/HomeMain.370991525f361289935e.jpg",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "static/media/Kebab.jpeg": "/static/media/Kebab.83b3d0259d18cf21045d.jpeg",
+    "static/media/Vegetable.jpeg": "/static/media/Vegetable.1592125dcbb98bed5a70.jpeg",
+    "static/media/Italian.jpeg": "/static/media/Italian.c622ec0ca8e3708c25ad.jpeg",
+    "static/media/Mexican.jpeg": "/static/media/Mexican.26d424dc8f3c17566172.jpeg",
+    "static/media/Spanish.jpeg": "/static/media/Spanish.e37987c00378f63a189b.jpeg",
+    "static/media/logo.png": "/static/media/logo.96e7e4dcdcf7fdce242d.png",
+    "index.html": "/index.html",
+    "main.31423341.css.map": "/static/css/main.31423341.css.map",
+    "main.ba9fd321.js.map": "/static/js/main.ba9fd321.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31423341.css",
+    "static/js/main.ba9fd321.js"
+  ]
+}
