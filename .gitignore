@@ -47,9 +47,9 @@ coverage
 *.lcov
 
 # Build output directories
-build/
+#build/
 dist/
-public/
+#public/
 
 # Serverless directories
 .serverless/

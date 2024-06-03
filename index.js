@@ -100,45 +100,41 @@ app.get('/api/form', async (req, res) => {
 
 app.post('/api/send', async (req, res) => {
   try {
-    console.log(req.body);
-    console.log('req.body');
+    // console.log(req.body);
     res.send('hello');
 
-    const sentData = `   <p>You have a new contact request</p>
-  <h3>Contact Details</h3>
-  <ul>  
-    <li>Name: ${req.body.first_name}</li>
-    <li>Company: ${req.body.last_name}</li>
-    <li>Email: ${req.body.phone}</li>
-    <li>Phone: ${req.body.email}</li>
-  </ul>
-  <h3>Message</h3>
-  <p>${req.body.message}</p>`;
+    const sentData = `
+      <h3>Sender Details</h3>
+      <ul>  
+      <li>First Name: ${req.body.first_name}</li>
+      <li>Last Name: ${req.body.last_name}</li>
+      <li>Phone: ${req.body.phone}</li>
+      <li>Email: ${req.body.email}</li>
+      </ul>
+      <h3>Message</h3>
+      <p>${req.body.message}</p>`;
+
     // create reusable transporter object using the default SMTP transport
-    let transporter = await nodemailer.createTransport({
-      host: 'mail.privateemail.com',
-      port: 465,
-      secure: false, // true for 465, false for other ports
+    let transporter = nodemailer.createTransport({
+      host: process.env.EMAIL_HOST,
+      port: process.env.EMAIL_PORT,
+      secure: true, // true for 465, false for other ports
       auth: {
-        user: 'process.env.EMAIL_USER', // generated ethereal user
-        pass: 'process.env.EMAIL_PASS', // generated ethereal password
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
     // send mail with defined transport object
     let info = await transporter.sendMail({
-      from: `Email from Topizza <${process.env.EMAIL_USER}>`, // sender address
-      to: `${process.env.EMAIL_USER}`, // list of receivers
-      subject: 'Hello', // Subject line
+      from: `"Email from ${process.env.EMAIL_USER} account" <${process.env.EMAIL_USER}>`, // sender address
+      to: 'topizza@toptechsol.com', // list of receivers
+      subject: 'New message from Topizza', // Subject line
       text: 'Hello world?', // plain text body
       html: `<b>${sentData}</b>`, // html body
     });
 
-    console.log('Message sent: %s', info.messageId);
-    // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-
-    // Preview only available when sending through an Ethereal account
-    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+    //console.log('Message sent: %s', info.messageId);
     // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
   } catch (err) {
     console.error(err.message);
@@ -160,7 +156,7 @@ app.get('/api/order', async (req, res) => {
 app.get('/api/order/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    console.log(typeof id);
+    //console.log(typeof id);
     const ord = await pool.query(
       'SELECT * FROM orders where orders.email = $1',
       [id]
@@ -219,5 +215,5 @@ app.delete('/api/order/:id', async (req, res) => {
 // });
 
 app.listen(PORT, () => {
-  console.log(`server has started on port ${PORT}`);
+  //console.log(`server has started on port ${PORT}`);
 });
